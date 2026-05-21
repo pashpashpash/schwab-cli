@@ -12,7 +12,7 @@ use std::collections::{BTreeMap, HashMap};
 use std::fs::{self, OpenOptions};
 use std::io::{self, Read, Write};
 #[cfg(unix)]
-use std::os::unix::fs::OpenOptionsExt;
+use std::os::unix::fs::{OpenOptionsExt, PermissionsExt};
 use std::path::{Path, PathBuf};
 use std::process::Command as ProcessCommand;
 use std::time::Instant;
@@ -33,6 +33,7 @@ const DEFAULT_KEEPALIVE_HOUR: u8 = 6;
 const DEFAULT_KEEPALIVE_MINUTE: u8 = 30;
 const AGENT_MAX_BYTES: usize = 50 * 1024;
 const AGENT_MAX_LINES: usize = 200;
+const DEFAULT_UPDATE_REPO: &str = "pashpashpash/schwab-cli";
 const SCHWAB_COVERAGE_NOTE: &str = "Schwab Trader API OAuth exposes only accounts Schwab makes available during consent. Some workplace, retirement-plan, fixed-income, banking, or other Schwab accounts may be absent from OAuth even when visible in Schwab web.";
 
 const TRANSACTION_TYPES: &[&str] = &[
@@ -91,6 +92,24 @@ enum Command {
     Delete(GenericDeleteArgs),
     Docs(DocsCommand),
     Snapshot(SnapshotArgs),
+    Update(UpdateArgs),
+}
+
+#[derive(Args)]
+struct UpdateArgs {
+    #[arg(long, default_value = DEFAULT_UPDATE_REPO)]
+    repo: String,
+    #[arg(
+        long,
+        help = "Specific GitHub release tag to install; default uses latest"
+    )]
+    tag: Option<String>,
+    #[arg(long, help = "Override target triple asset selection")]
+    target: Option<String>,
+    #[arg(long, help = "Binary path to replace; default is current executable")]
+    bin: Option<PathBuf>,
+    #[arg(long, help = "Resolve release and asset but do not replace the binary")]
+    dry_run: bool,
 }
 
 #[derive(Args)]
@@ -724,6 +743,7 @@ fn run(start: Instant) -> Result<()> {
         Command::Delete(args) => handle_generic_delete(&cli, args, start),
         Command::Docs(docs) => handle_docs(&cli, &docs.command, start),
         Command::Snapshot(args) => handle_snapshot(&cli, args, start),
+        Command::Update(args) => handle_update(&cli, args, start),
     }
 }
 
@@ -1510,6 +1530,129 @@ fn handle_snapshot(cli: &Cli, args: &SnapshotArgs, start: Instant) -> Result<()>
         json!({"status": "ok", "latest_snapshot": latest_path, "dated_snapshot": dated_path}),
         start,
         vec!["cat ~/.local/share/schwab-cli/latest_snapshot.json"],
+    )
+}
+
+fn handle_update(cli: &Cli, args: &UpdateArgs, start: Instant) -> Result<()> {
+    let target = args.target.clone().unwrap_or_else(current_target);
+    let asset_name = release_asset_name(&target);
+    let release_url = release_api_url(&args.repo, args.tag.as_deref());
+    let http = Client::builder().build()?;
+    let release: Value = http
+        .get(&release_url)
+        .header("User-Agent", "schwab-cli")
+        .send()
+        .with_context(|| format!("Failed to query GitHub release metadata at {release_url}"))?
+        .error_for_status()
+        .with_context(|| format!("GitHub release lookup failed at {release_url}"))?
+        .json()
+        .context("Failed to parse GitHub release metadata")?;
+    let tag_name = release
+        .get("tag_name")
+        .and_then(Value::as_str)
+        .unwrap_or("unknown");
+    let assets = release
+        .get("assets")
+        .and_then(Value::as_array)
+        .ok_or_else(|| anyhow!("GitHub release response missing assets array"))?;
+    let asset_names: Vec<String> = assets
+        .iter()
+        .filter_map(|asset| asset.get("name").and_then(Value::as_str))
+        .map(ToString::to_string)
+        .collect();
+    let asset = assets
+        .iter()
+        .find(|asset| asset.get("name").and_then(Value::as_str) == Some(asset_name.as_str()))
+        .ok_or_else(|| {
+            anyhow!(
+                "No release asset named {asset_name} for target {target}. Available assets: {}. Next: schwab-cli update --target <asset-target>",
+                asset_names.join(", ")
+            )
+        })?;
+    let download_url = asset
+        .get("browser_download_url")
+        .and_then(Value::as_str)
+        .ok_or_else(|| anyhow!("Release asset {asset_name} missing browser_download_url"))?;
+    let destination = args
+        .bin
+        .clone()
+        .unwrap_or(std::env::current_exe().context("Could not resolve current executable path")?);
+
+    if args.dry_run {
+        return emit(
+            cli,
+            json!({
+                "status": "dry_run",
+                "repo": args.repo,
+                "tag": tag_name,
+                "target": target,
+                "asset": asset_name,
+                "download_url": download_url,
+                "destination": destination,
+                "next": "schwab-cli update"
+            }),
+            start,
+            vec!["schwab-cli update"],
+        );
+    }
+
+    let bytes = http
+        .get(download_url)
+        .header("User-Agent", "schwab-cli")
+        .send()
+        .with_context(|| format!("Failed to download {download_url}"))?
+        .error_for_status()
+        .with_context(|| format!("GitHub asset download failed for {download_url}"))?
+        .bytes()
+        .context("Failed to read downloaded release asset")?;
+    if bytes.len() < 1024 {
+        bail!(
+            "Downloaded asset is unexpectedly small ({} bytes). Refusing to replace {}",
+            bytes.len(),
+            destination.display()
+        );
+    }
+
+    if let Some(parent) = destination.parent() {
+        fs::create_dir_all(parent)?;
+    }
+    let tmp_path = destination.with_file_name(format!(
+        ".{}.update-{}",
+        destination
+            .file_name()
+            .and_then(|name| name.to_str())
+            .unwrap_or("schwab-cli"),
+        std::process::id()
+    ));
+    fs::write(&tmp_path, &bytes)
+        .with_context(|| format!("Failed to write update file {}", tmp_path.display()))?;
+    #[cfg(unix)]
+    {
+        let mut perms = fs::metadata(&tmp_path)?.permissions();
+        perms.set_mode(0o755);
+        fs::set_permissions(&tmp_path, perms)?;
+    }
+    fs::rename(&tmp_path, &destination).with_context(|| {
+        format!(
+            "Failed to replace {}. If this path is system-owned, rerun with --bin pointing to a user-writable schwab-cli install.",
+            destination.display()
+        )
+    })?;
+
+    emit(
+        cli,
+        json!({
+            "status": "updated",
+            "repo": args.repo,
+            "tag": tag_name,
+            "target": target,
+            "asset": asset_name,
+            "destination": destination,
+            "bytes": bytes.len(),
+            "next": "schwab-cli version"
+        }),
+        start,
+        vec!["schwab-cli version"],
     )
 }
 
@@ -3390,6 +3533,25 @@ fn order_examples_doc_path() -> PathBuf {
     docs_dir().join("order-examples.md")
 }
 
+fn release_api_url(repo: &str, tag: Option<&str>) -> String {
+    match tag {
+        Some(tag) => format!("https://api.github.com/repos/{repo}/releases/tags/{tag}"),
+        None => format!("https://api.github.com/repos/{repo}/releases/latest"),
+    }
+}
+
+fn current_target() -> String {
+    format!("{}-{}", std::env::consts::ARCH, std::env::consts::OS)
+        .replace("x86_64-macos", "x86_64-apple-darwin")
+        .replace("aarch64-macos", "aarch64-apple-darwin")
+        .replace("x86_64-linux", "x86_64-unknown-linux-gnu")
+        .replace("aarch64-linux", "aarch64-unknown-linux-gnu")
+}
+
+fn release_asset_name(target: &str) -> String {
+    format!("schwab-cli-{target}")
+}
+
 fn overflow_path() -> PathBuf {
     PathBuf::from("/private/tmp")
         .join("schwab-cli-output")
@@ -3449,12 +3611,12 @@ mod tests {
     #[test]
     fn account_numbers_parse_to_secret_map() {
         let payload = json!([
-            {"accountNumber": "123456783", "hashValue": "encrypted-one"},
-            {"accountNumber": "000000757", "hashValue": "encrypted-two"}
+            {"accountNumber": "123451111", "hashValue": "encrypted-one"},
+            {"accountNumber": "000002222", "hashValue": "encrypted-two"}
         ]);
         let map = parse_account_numbers(&payload).unwrap();
         assert_eq!(map.accounts.len(), 2);
-        assert_eq!(map.accounts[0].last4, "6783");
+        assert_eq!(map.accounts[0].last4, "1111");
         assert_eq!(map.accounts[1].hash_value, "encrypted-two");
     }
 
@@ -3467,6 +3629,22 @@ mod tests {
             .unwrap()
             .iter()
             .any(|value| value.as_str().unwrap().contains("OAuth")));
+    }
+
+    #[test]
+    fn update_release_urls_and_asset_names_are_predictable() {
+        assert_eq!(
+            release_api_url("owner/repo", None),
+            "https://api.github.com/repos/owner/repo/releases/latest"
+        );
+        assert_eq!(
+            release_api_url("owner/repo", Some("v1.2.3")),
+            "https://api.github.com/repos/owner/repo/releases/tags/v1.2.3"
+        );
+        assert_eq!(
+            release_asset_name("aarch64-apple-darwin"),
+            "schwab-cli-aarch64-apple-darwin"
+        );
     }
 
     fn test_token_at(now: DateTime<Utc>, access_seconds: i64, refresh_seconds: i64) -> TokenStore {

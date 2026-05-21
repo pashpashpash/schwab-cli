@@ -1,158 +1,116 @@
 # schwab-cli
 
-Agent-first Rust CLI for Schwab Trader API accounts, orders, market data, streaming, and local snapshots.
+`schwab-cli` is an agent-first Rust CLI for the Schwab Trader API. It is built for LLMs, shell scripts, and humans who prefer composable tools: JSON to stdout, diagnostics to stderr, useful `--help`, explicit safety rails around live trading, and an `--agent` mode for compact machine-readable envelopes.
 
-The CLI is JSON-first by default so it composes cleanly with `jq`, shell pipes, scripts, and agents. Human diagnostics and API errors go to stderr. Use `--agent` for a compact agent envelope with overflow hints.
+It covers OAuth, account numbers, balances, positions, transactions, orders, order preview/place/replace/cancel, market quotes, option chains, price history, movers, market hours, instruments, streamer metadata/listening, snapshots, and generic REST escape hatches.
 
-## Status
-
-This is a personal-tooling extraction prepared for open source. It is not affiliated with, endorsed by, or supported by Charles Schwab.
-
-The generated reference files in `docs/schwab-api/` were extracted from locally saved Schwab Developer Portal pages. They are included as development reference material; review Schwab's developer terms before redistributing them publicly.
+This project is not affiliated with or endorsed by Charles Schwab.
 
 ## Install
 
+The simple path installs the latest GitHub release into `~/bin/schwab-cli`:
+
 ```bash
-cargo build --release
+curl -fsSL https://raw.githubusercontent.com/pashpashpash/schwab-cli/main/install.sh | sh
 ```
 
-Optional global install:
+Make sure `~/bin` is on your `PATH`, then verify:
 
 ```bash
-mkdir -p ~/bin
-ln -sf "$PWD/target/release/schwab-cli" ~/bin/schwab-cli
+schwab-cli version
+schwab-cli doctor
 ```
 
-Or install with Cargo:
+From source:
 
 ```bash
+git clone https://github.com/pashpashpash/schwab-cli.git
+cd schwab-cli
 cargo install --path .
 ```
 
-## Configuration
-
-By default, local files live outside the repo:
-
-```text
-~/.config/schwab-cli/app.json       # OAuth app client ID, secret, callback URL
-~/.config/schwab-cli/token.json     # access token, refresh token, expiry metadata
-~/.config/schwab-cli/accounts.json  # encrypted Schwab account IDs, aliases, last4 mapping
-~/.local/share/schwab-cli/          # snapshots, overflow files, logs
-```
-
-Override paths when needed:
+Update an existing install from the latest GitHub release:
 
 ```bash
-export SCHWAB_CLI_CONFIG_DIR=/secure/path/schwab-cli
-export SCHWAB_CLI_DATA_DIR=/data/path/schwab-cli
+schwab-cli update
 ```
 
-Never commit real `app.json`, `token.json`, `accounts.json`, order files with account IDs, or snapshots with personal holdings.
+For nonstandard installs:
+
+```bash
+schwab-cli update --bin /path/to/schwab-cli
+```
 
 ## Auth
 
-A Schwab developer app identifies the application. It does not grant account access until the account holder completes OAuth consent.
+Create a Schwab developer app, then configure the CLI with its client ID, client secret, and callback URL:
 
 ```bash
 schwab-cli setup \
   --client-id '<client id>' \
   --client-secret '<client secret>' \
   --callback-url https://127.0.0.1:8182/callback
+```
 
-schwab-cli auth url --open
-schwab-cli auth exchange --callback-url '<full redirected callback URL containing code=...>'
+Connect the app to your actual Schwab account through OAuth:
+
+```bash
+schwab-cli auth login --open
 schwab-cli account-numbers
 ```
 
-Interactive paste flow:
-
-```bash
-schwab-cli auth login
-```
-
-Schwab refresh tokens are short-lived. API commands auto-refresh while the refresh token is still valid. To keep auth warm on macOS, install the launchd keepalive:
+Schwab refresh tokens are short-lived. API commands refresh automatically while the refresh token is still valid. On macOS, install a daily launchd refresher:
 
 ```bash
 schwab-cli auth keepalive install --bin "$HOME/bin/schwab-cli"
-schwab-cli auth keepalive status
 ```
 
-If `auth status` says the refresh token is expired, run `schwab-cli auth login` again.
+## Local Files
 
-## Coverage
+Secrets and snapshots live outside the repo by default:
 
-Account and trading:
+```text
+~/.config/schwab-cli/app.json
+~/.config/schwab-cli/token.json
+~/.config/schwab-cli/accounts.json
+~/.local/share/schwab-cli/
+```
+
+Overrides:
+
+```bash
+export SCHWAB_CLI_CONFIG_DIR=/secure/path/schwab-cli
+export SCHWAB_CLI_DATA_DIR=/data/path/schwab-cli
+```
+
+Never commit real app credentials, OAuth tokens, account maps, order files, snapshots, or exported brokerage data.
+
+## Examples
 
 ```bash
 schwab-cli account-numbers
 schwab-cli accounts list --positions
-schwab-cli accounts get --account individual --positions
-schwab-cli accounts alias --account 1234 --name individual
 schwab-cli cash status --account individual
 schwab-cli transactions list --account individual --start 2026-05-01 --end 2026-05-21
-schwab-cli orders list --account individual --from 2026-05-01T00:00:00Z --to 2026-05-21T23:59:59Z
-schwab-cli orders get --account individual --order-id 123
 schwab-cli orders preview --account individual --json-file order.json
-```
-
-Market data:
-
-```bash
 schwab-cli market quotes --symbols AAPL,GOOGL,LLY
-schwab-cli market quote --symbol AAPL
-schwab-cli market chains --symbol AAPL
-schwab-cli market expiration-chain --symbol AAPL
 schwab-cli market price-history --symbol AAPL --period-type year --period 1 --frequency-type daily --frequency 1
-schwab-cli market movers --index '$SPX'
-schwab-cli market hours --markets equity,option --date 2026-05-21
-schwab-cli market instrument-search --symbol AAPL --projection symbol-search
-schwab-cli market instrument --cusip 037833100
-```
-
-Streaming:
-
-```bash
-schwab-cli streamer info
-schwab-cli streamer fields
 schwab-cli streamer fields --service LEVELONE_EQUITIES
-schwab-cli streamer listen --service LEVELONE_EQUITIES --keys AAPL,MSFT --fields 0,1,2,3 --jsonl
-schwab-cli streamer listen --service ACCT_ACTIVITY --jsonl
+schwab-cli streamer listen --service LEVELONE_EQUITIES --keys AAPL,MSFT --jsonl
+schwab-cli snapshot --include-orders --include-transactions --quotes AAPL,GOOGL,LLY
 ```
 
-Docs and generic escape hatches:
+Generic escape hatch:
 
 ```bash
-schwab-cli docs list
-schwab-cli docs endpoint getAccount
-schwab-cli docs model Order
-schwab-cli docs search pricehistory
 schwab-cli get --base trader --path /accounts --param fields=positions
 schwab-cli get --base market --path /quotes --param symbols=AAPL,MSFT
 schwab-cli post --base trader --path /accounts/{account}/previewOrder --body-file order.json
 ```
 
-Snapshots:
+## Live Trading Safety
 
-```bash
-schwab-cli snapshot --include-orders --include-transactions --quotes AAPL,GOOGL,LLY
-```
-
-## Cash Status
-
-Use `cash status` before sizing trades:
-
-```bash
-schwab-cli cash status --account individual
-schwab-cli cash status --account individual --raw
-```
-
-This command calls `GET /accounts/{accountNumber}` only. It does not run hidden order previews and never places orders.
-
-Important Schwab behavior: the web UI can show same-day ACH funds as held or available differently than Trader API balance fields. Treat `non_margin_trade_capacity` as the conservative cash-only sizing field, treat `stock_buying_power` as margin-sensitive, and use `orders preview` for concrete order preflight.
-
-## Live Order Guard
-
-Previewing orders is intentionally easy:
+Order previews are easy and encouraged:
 
 ```bash
 schwab-cli orders preview --account individual --json-file order.json
@@ -165,23 +123,28 @@ SCHWAB_CLI_ALLOW_LIVE_TRADING=1 \
   schwab-cli orders place --account individual --json-file order.json --yes-live-order
 ```
 
-The same guard applies to order replace/cancel and generic order mutation endpoints.
+The same guard applies to replace/cancel and generic order mutation endpoints.
 
 ## API Boundaries
 
-Schwab Trader API OAuth exposes only accounts Schwab makes available during consent. Some workplace retirement-plan, banking, fixed-income, or other Schwab surfaces may be visible on Schwab web but absent from API account lists.
+Schwab OAuth exposes only accounts Schwab offers during consent. Some workplace retirement-plan, banking, fixed-income, or other Schwab surfaces may be visible on Schwab web but absent from the Trader API.
 
-The documented order-entry surface is equities/options oriented. Direct Treasury auction, CD, bond ladder, or fixed-income order-placement flows may require Schwab web even if positions or instruments are visible through API data endpoints.
+Direct Treasury auction, CD, bond ladder, or fixed-income order-entry workflows may require Schwab web even when positions or instruments are visible through API data endpoints.
+
+## Generated Schwab Docs
+
+`docs/schwab-api/` contains generated reference material extracted from locally saved Schwab Developer Portal pages. It is included for development convenience, is not official Schwab documentation, and may be stale. Review Schwab's developer terms before redistributing those generated files.
 
 ## Development
 
 ```bash
-cargo fmt
-cargo test
+cargo fmt --check
+cargo test --locked
 cargo run -- version
-cargo run -- doctor
 ```
+
+Pushes to `main` run CI and rebuild the mutable `latest` GitHub release. Pushing a `v*` tag creates a tagged release.
 
 ## License
 
-Code is released under the MIT License. Generated Schwab reference docs under `docs/schwab-api/` are third-party-derived reference material and are not official Schwab documentation.
+Code is MIT licensed. Generated Schwab reference docs are third-party-derived reference material and are not official Schwab documentation.
