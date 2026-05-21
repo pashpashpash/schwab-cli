@@ -1320,7 +1320,7 @@ fn handle_generic_delete(cli: &Cli, args: &GenericDeleteArgs, start: Instant) ->
 fn handle_docs(cli: &Cli, command: &DocsSubcommand, start: Instant) -> Result<()> {
     match command {
         DocsSubcommand::List => {
-            let catalog = read_json(&endpoint_catalog_path())?;
+            let catalog = read_doc_json(&endpoint_catalog_path())?;
             let endpoints = all_endpoints(&catalog);
             let trading_models = model_names(&trading_models_path())?;
             let market_models = model_names(&market_models_path())?;
@@ -1335,7 +1335,7 @@ fn handle_docs(cli: &Cli, command: &DocsSubcommand, start: Instant) -> Result<()
             )
         }
         DocsSubcommand::Endpoint(args) => {
-            let catalog = read_json(&endpoint_catalog_path())?;
+            let catalog = read_doc_json(&endpoint_catalog_path())?;
             let needle = args.value.to_lowercase();
             let matches: Vec<Value> = all_endpoints(&catalog)
                 .into_iter()
@@ -1376,7 +1376,7 @@ fn handle_docs(cli: &Cli, command: &DocsSubcommand, start: Instant) -> Result<()
             let query = args.query.to_lowercase();
             let mut matches = Vec::new();
             for path in paths {
-                let text = fs::read_to_string(&path).unwrap_or_default();
+                let text = read_doc_text(&path).unwrap_or_default();
                 for (idx, line) in text.lines().enumerate() {
                     if line.to_lowercase().contains(&query) {
                         matches.push(json!({"path": path, "line": idx + 1, "text": line}));
@@ -2787,8 +2787,7 @@ fn version_payload() -> Value {
     json!({
         "name": "schwab-cli",
         "version": env!("CARGO_PKG_VERSION"),
-        "repo_root": repo_root(),
-        "docs_catalog": endpoint_catalog_path(),
+        "docs": docs_status_payload(),
         "trader_base": TRADER_BASE,
         "market_base": MARKET_BASE,
         "coverage": schwab_coverage_payload(),
@@ -2802,13 +2801,12 @@ fn doctor_payload() -> Value {
     let global_bin = user_bin.join("schwab-cli");
     json!({
         "coverage": schwab_coverage_payload(),
-        "crate_root": repo_root(),
         "config_dir": schwab_secrets_dir(),
         "data_dir": schwab_data_dir(),
         "app_config": {"path": app_config_path(), "exists": app_config_path().exists()},
         "token": auth_status_payload().get("token").cloned().unwrap_or(Value::Null),
         "account_map": {"path": account_map_path(), "exists": account_map_path().exists()},
-        "docs": {"catalog": endpoint_catalog_path(), "exists": endpoint_catalog_path().exists()},
+        "docs": docs_status_payload(),
         "global_bin": {"path": global_bin, "exists": global_bin.exists(), "user_bin_on_path": path_entries.iter().any(|entry| Path::new(entry) == user_bin)},
         "auth_keepalive": keepalive_status_payload(),
         "live_trading_env_enabled": std::env::var("SCHWAB_CLI_ALLOW_LIVE_TRADING").ok().as_deref() == Some("1")
@@ -2847,6 +2845,15 @@ fn schwab_coverage_payload() -> Value {
         "excludes": ["Accounts not offered in OAuth consent", "Schwab banking", "Many workplace retirement-plan surfaces", "Direct Treasury/CD/fixed-income order entry"],
         "note": SCHWAB_COVERAGE_NOTE,
         "source": "Schwab OAuth consent and published Trader API surface"
+    })
+}
+
+fn docs_status_payload() -> Value {
+    let catalog = endpoint_catalog_path();
+    json!({
+        "source": if catalog.exists() { "filesystem" } else { "embedded" },
+        "filesystem_catalog": catalog,
+        "filesystem_catalog_exists": endpoint_catalog_path().exists(),
     })
 }
 
@@ -3277,18 +3284,60 @@ fn load_account_map() -> Result<AccountMap> {
     read_json_typed(&account_map_path())
 }
 
-fn read_json(path: &Path) -> Result<Value> {
+fn read_json_typed<T: for<'de> Deserialize<'de>>(path: &Path) -> Result<T> {
     let text =
         fs::read_to_string(path).with_context(|| format!("Failed to read {}", path.display()))?;
     serde_json::from_str(&text)
         .with_context(|| format!("Failed to parse JSON from {}", path.display()))
 }
 
-fn read_json_typed<T: for<'de> Deserialize<'de>>(path: &Path) -> Result<T> {
-    let text =
-        fs::read_to_string(path).with_context(|| format!("Failed to read {}", path.display()))?;
+fn read_doc_json(path: &Path) -> Result<Value> {
+    let text = read_doc_text(path)?;
     serde_json::from_str(&text)
-        .with_context(|| format!("Failed to parse JSON from {}", path.display()))
+        .with_context(|| format!("Failed to parse Schwab reference JSON {}", path.display()))
+}
+
+fn read_doc_json_typed<T: for<'de> Deserialize<'de>>(path: &Path) -> Result<T> {
+    let text = read_doc_text(path)?;
+    serde_json::from_str(&text)
+        .with_context(|| format!("Failed to parse Schwab reference JSON {}", path.display()))
+}
+
+fn read_doc_text(path: &Path) -> Result<String> {
+    if path.exists() {
+        return fs::read_to_string(path)
+            .with_context(|| format!("Failed to read {}", path.display()));
+    }
+    embedded_doc_text(path)
+        .map(ToString::to_string)
+        .ok_or_else(|| anyhow!("No embedded Schwab reference doc for {}", path.display()))
+}
+
+fn embedded_doc_text(path: &Path) -> Option<&'static str> {
+    let path = path.to_string_lossy();
+    if path.ends_with("endpoint-catalog.json") {
+        Some(include_str!("../docs/schwab-api/endpoint-catalog.json"))
+    } else if path.ends_with("schemas/trading-models.json") {
+        Some(include_str!(
+            "../docs/schwab-api/schemas/trading-models.json"
+        ))
+    } else if path.ends_with("schemas/market-data-models.json") {
+        Some(include_str!(
+            "../docs/schwab-api/schemas/market-data-models.json"
+        ))
+    } else if path.ends_with("oauth.md") {
+        Some(include_str!("../docs/schwab-api/oauth.md"))
+    } else if path.ends_with("trading-rest.md") {
+        Some(include_str!("../docs/schwab-api/trading-rest.md"))
+    } else if path.ends_with("market-data-rest.md") {
+        Some(include_str!("../docs/schwab-api/market-data-rest.md"))
+    } else if path.ends_with("streamer.md") {
+        Some(include_str!("../docs/schwab-api/streamer.md"))
+    } else if path.ends_with("order-examples.md") {
+        Some(include_str!("../docs/schwab-api/order-examples.md"))
+    } else {
+        None
+    }
 }
 
 fn write_json(path: &Path, payload: &Value) -> Result<()> {
@@ -3403,7 +3452,7 @@ fn all_endpoints(catalog: &Value) -> Vec<Value> {
 }
 
 fn model_names(path: &Path) -> Result<Vec<String>> {
-    let models: Vec<Value> = read_json_typed(path)?;
+    let models: Vec<Value> = read_doc_json_typed(path)?;
     Ok(models
         .iter()
         .filter_map(|model| {
@@ -3416,7 +3465,7 @@ fn model_names(path: &Path) -> Result<Vec<String>> {
 }
 
 fn find_models(path: &Path, query: &str) -> Result<Vec<Value>> {
-    let models: Vec<Value> = read_json_typed(path)?;
+    let models: Vec<Value> = read_doc_json_typed(path)?;
     let needle = query.to_lowercase();
     Ok(models
         .into_iter()

@@ -14,12 +14,7 @@ case "$os:$arch" in
 esac
 
 asset="schwab-cli-$target"
-api="https://api.github.com/repos/$repo/releases/latest"
-url="$(curl -fsSL "$api" | sed -n 's/.*"browser_download_url": "\([^"]*'"$asset"'\)".*/\1/p' | head -n 1)"
-if [ -z "$url" ]; then
-  echo "could not find release asset $asset in $api" >&2
-  exit 1
-fi
+url="https://github.com/$repo/releases/latest/download/$asset"
 
 mkdir -p "$bin_dir"
 tmp="$(mktemp)"
