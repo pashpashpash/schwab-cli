@@ -1,0 +1,20 @@
+/target/
+.DS_Store
+*.swp
+*.swo
+
+# Local auth/config/secrets. Defaults live outside this repo, but keep these ignored
+# for users who point SCHWAB_CLI_CONFIG_DIR or SCHWAB_CLI_DATA_DIR into the checkout.
+/app.json
+/token.json
+/accounts.json
+/config/
+/data/
+/secrets/
+/snapshots/
+/logs/
+/tmp/
+*.pem
+*.key
+*.p12
+*.pfx

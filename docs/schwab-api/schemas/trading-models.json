@@ -1,0 +1,2338 @@
+[
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "string",
+        "field": "hashValue"
+      }
+    ],
+    "name": "AccountNumberHash"
+  },
+  {
+    "fields": [],
+    "name": "session"
+  },
+  {
+    "fields": [],
+    "name": "duration"
+  },
+  {
+    "fields": [],
+    "name": "orderType"
+  },
+  {
+    "fields": [],
+    "name": "orderTypeRequest"
+  },
+  {
+    "fields": [],
+    "name": "complexOrderStrategyType"
+  },
+  {
+    "fields": [],
+    "name": "requestedDestination"
+  },
+  {
+    "fields": [],
+    "name": "stopPriceLinkBasis"
+  },
+  {
+    "fields": [],
+    "name": "stopPriceLinkType"
+  },
+  {
+    "fields": [],
+    "name": "stopPriceOffset"
+  },
+  {
+    "fields": [],
+    "name": "stopType"
+  },
+  {
+    "fields": [],
+    "name": "priceLinkBasis"
+  },
+  {
+    "fields": [],
+    "name": "priceLinkType"
+  },
+  {
+    "fields": [],
+    "name": "taxLotMethod"
+  },
+  {
+    "fields": [],
+    "name": "specialInstruction"
+  },
+  {
+    "fields": [],
+    "name": "orderStrategyType"
+  },
+  {
+    "fields": [],
+    "name": "status"
+  },
+  {
+    "fields": [],
+    "name": "amountIndicator"
+  },
+  {
+    "fields": [],
+    "name": "settlementInstruction"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "string Enum: [ NONE, OTO, OCO, OTOCO, OT2OCO, OT3OCO, BLAST_ALL, OTA, PAIR ]",
+        "field": "advancedOrderType"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "closeTime"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "enteredTime"
+      },
+      {
+        "details": "#/components/schemas/OrderBalance OrderBalance { orderValue number ($double) projectedAvailableFund number ($double) projectedBuyingPower number ($double) projectedCommission number ($double) }",
+        "field": "orderBalance"
+      },
+      {
+        "details": "orderStrategyType string Enum: [ SINGLE, CANCEL, RECALL, PAIR, FLATTEN, TWO_DAY_SWAP, BLAST_ALL, OCO, TRIGGER ]",
+        "field": "orderStrategyType"
+      },
+      {
+        "details": "number",
+        "field": "orderVersion"
+      },
+      {
+        "details": "session string Enum: [ NORMAL, AM, PM, SEAMLESS ]",
+        "field": "session"
+      },
+      {
+        "details": "apiOrderStatus string Enum: [ AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN ]",
+        "field": "status"
+      },
+      {
+        "details": "boolean",
+        "field": "allOrNone"
+      },
+      {
+        "details": "boolean",
+        "field": "discretionary"
+      },
+      {
+        "details": "duration string Enum: [ DAY, GOOD_TILL_CANCEL, FILL_OR_KILL, IMMEDIATE_OR_CANCEL, END_OF_WEEK, END_OF_MONTH, NEXT_END_OF_MONTH, UNKNOWN ]",
+        "field": "duration"
+      },
+      {
+        "details": "number ($double)",
+        "field": "filledQuantity"
+      },
+      {
+        "details": "orderType string Enum: [ MARKET, LIMIT, STOP, STOP_LIMIT, TRAILING_STOP, CABINET, NON_MARKETABLE, MARKET_ON_CLOSE, EXERCISE, TRAILING_STOP_LIMIT, NET_DEBIT, NET_CREDIT, NET_ZERO, LIMIT_ON_CLOSE, UNKNOWN ]",
+        "field": "orderType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "orderValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "price"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "remainingQuantity"
+      },
+      {
+        "details": "boolean",
+        "field": "sellNonMarginableFirst"
+      },
+      {
+        "details": "settlementInstruction string Enum: [ REGULAR, CASH, NEXT_DAY, UNKNOWN ]",
+        "field": "settlementInstruction"
+      },
+      {
+        "details": "complexOrderStrategyType string Enum: [ NONE, COVERED, VERTICAL, BACK_RATIO, CALENDAR, DIAGONAL, STRADDLE, STRANGLE, COLLAR_SYNTHETIC, BUTTERFLY, CONDOR, IRON_CONDOR, VERTICAL_ROLL, COLLAR_WITH_STOCK, DOUBLE_DIAGONAL, UNBALANCED_BUTTERFLY, UNBALANCED_CONDOR, UNBALANCED_IRON_CONDOR, UNBALANCED_VERTICAL_ROLL, MUTUAL_FUND_SWAP, CUSTOM ]",
+        "field": "strategy"
+      },
+      {
+        "details": "amountIndicator string Enum: [ DOLLARS, SHARES, ALL_SHARES, PERCENTAGE, UNKNOWN ]",
+        "field": "amountIndicator"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"orderLeg\", \"wrapped\": true } #/components/schemas/OrderLeg OrderLeg { askPrice number ($double) bidPrice number ($double) lastPrice number ($double) markPrice number ($double) projectedCommission number ($double) quantity number ($double) finalSymbol string legId number ($long) assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] instruction instruction string Enum: [ BUY, SELL, BUY_TO_COVER, SELL_SHORT, BUY_TO_OPEN, BUY_TO_CLOSE, SELL_TO_OPEN, SELL_TO_CLOSE, EXCHANGE, SELL_SHORT_EXEMPT ] }",
+        "field": "orderLegs"
+      }
+    ],
+    "name": "OrderStrategy"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "askPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bidPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "lastPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "projectedCommission"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "string",
+        "field": "finalSymbol"
+      },
+      {
+        "details": "number ($long)",
+        "field": "legId"
+      },
+      {
+        "details": "assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType"
+      },
+      {
+        "details": "instruction string Enum: [ BUY, SELL, BUY_TO_COVER, SELL_SHORT, BUY_TO_OPEN, BUY_TO_CLOSE, SELL_TO_OPEN, SELL_TO_CLOSE, EXCHANGE, SELL_SHORT_EXEMPT ]",
+        "field": "instruction"
+      }
+    ],
+    "name": "OrderLeg"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "orderValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "projectedAvailableFund"
+      },
+      {
+        "details": "number ($double)",
+        "field": "projectedBuyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "projectedCommission"
+      }
+    ],
+    "name": "OrderBalance"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] }",
+        "field": "alerts"
+      },
+      {
+        "details": "[] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] }",
+        "field": "accepts"
+      },
+      {
+        "details": "[] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] }",
+        "field": "rejects"
+      },
+      {
+        "details": "[] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] }",
+        "field": "reviews"
+      },
+      {
+        "details": "[] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] }",
+        "field": "warns"
+      }
+    ],
+    "name": "OrderValidationResult"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "validationRuleName"
+      },
+      {
+        "details": "string",
+        "field": "message"
+      },
+      {
+        "details": "string",
+        "field": "activityMessage"
+      },
+      {
+        "details": "APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ]",
+        "field": "originalSeverity"
+      },
+      {
+        "details": "string",
+        "field": "overrideName"
+      },
+      {
+        "details": "APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ]",
+        "field": "overrideSeverity"
+      }
+    ],
+    "name": "OrderValidationDetail"
+  },
+  {
+    "fields": [],
+    "name": "APIRuleAction"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/Commission Commission { commissionLegs [] #/components/schemas/CommissionLeg CommissionLeg { commissionValues [] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } }",
+        "field": "commission"
+      },
+      {
+        "details": "#/components/schemas/Fees Fees { feeLegs [] #/components/schemas/FeeLeg FeeLeg { feeValues [] #/components/schemas/FeeValue FeeValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } }",
+        "field": "fee"
+      },
+      {
+        "details": "#/components/schemas/Commission Commission { commissionLegs [] #/components/schemas/CommissionLeg CommissionLeg { commissionValues [] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } }",
+        "field": "trueCommission"
+      }
+    ],
+    "name": "CommissionAndFee"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/CommissionLeg CommissionLeg { commissionValues [] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } }",
+        "field": "commissionLegs"
+      }
+    ],
+    "name": "Commission"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] }",
+        "field": "commissionValues"
+      }
+    ],
+    "name": "CommissionLeg"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "value"
+      },
+      {
+        "details": "FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "CommissionValue"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/FeeLeg FeeLeg { feeValues [] #/components/schemas/FeeValue FeeValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } }",
+        "field": "feeLegs"
+      }
+    ],
+    "name": "Fees"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/FeeValue FeeValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] }",
+        "field": "feeValues"
+      }
+    ],
+    "name": "FeeLeg"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "value"
+      },
+      {
+        "details": "FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "FeeValue"
+  },
+  {
+    "fields": [],
+    "name": "FeeType"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/SecuritiesAccount SecuritiesAccount { oneOf -> #/components/schemas/MarginAccount MarginAccount { type string Enum: [ CASH, MARGIN ] accountNumber string roundTrips integer ($int32) isDayTrader boolean default: false isClosingOnlyRestricted boolean default: false pfcbFlag boolean default: false positions [] #/components/schemas/Position Position { shortQuantity number ($double) averagePrice number ($double) currentDayProfitLoss number ($double) currentDayProfitLossPercentage number ($double) longQuantity number ($double) settledLongQuantity number ($double) settledShortQuantity number ($double) agedQuantity number ($double) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOption\u2026",
+        "field": "securitiesAccount"
+      }
+    ],
+    "name": "Account"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Valid ISO-8601 format is : yyyy-MM-dd'T'HH:mm:ss.SSSZ",
+        "field": "date"
+      }
+    ],
+    "name": "DateParam"
+  },
+  {
+    "fields": [
+      {
+        "details": "session string Enum: [ NORMAL, AM, PM, SEAMLESS ]",
+        "field": "session"
+      },
+      {
+        "details": "duration string Enum: [ DAY, GOOD_TILL_CANCEL, FILL_OR_KILL, IMMEDIATE_OR_CANCEL, END_OF_WEEK, END_OF_MONTH, NEXT_END_OF_MONTH, UNKNOWN ]",
+        "field": "duration"
+      },
+      {
+        "details": "orderType string Enum: [ MARKET, LIMIT, STOP, STOP_LIMIT, TRAILING_STOP, CABINET, NON_MARKETABLE, MARKET_ON_CLOSE, EXERCISE, TRAILING_STOP_LIMIT, NET_DEBIT, NET_CREDIT, NET_ZERO, LIMIT_ON_CLOSE, UNKNOWN ]",
+        "field": "orderType"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "cancelTime"
+      },
+      {
+        "details": "complexOrderStrategyType string Enum: [ NONE, COVERED, VERTICAL, BACK_RATIO, CALENDAR, DIAGONAL, STRADDLE, STRANGLE, COLLAR_SYNTHETIC, BUTTERFLY, CONDOR, IRON_CONDOR, VERTICAL_ROLL, COLLAR_WITH_STOCK, DOUBLE_DIAGONAL, UNBALANCED_BUTTERFLY, UNBALANCED_CONDOR, UNBALANCED_IRON_CONDOR, UNBALANCED_VERTICAL_ROLL, MUTUAL_FUND_SWAP, CUSTOM ]",
+        "field": "complexOrderStrategyType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "filledQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "remainingQuantity"
+      },
+      {
+        "details": "requestedDestination string Enum: [ INET, ECN_ARCA, CBOE, AMEX, PHLX, ISE, BOX, NYSE, NASDAQ, BATS, C2, AUTO ]",
+        "field": "requestedDestination"
+      },
+      {
+        "details": "string",
+        "field": "destinationLinkName"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "releaseTime"
+      },
+      {
+        "details": "number ($double)",
+        "field": "stopPrice"
+      },
+      {
+        "details": "stopPriceLinkBasis string Enum: [ MANUAL, BASE, TRIGGER, LAST, BID, ASK, ASK_BID, MARK, AVERAGE ]",
+        "field": "stopPriceLinkBasis"
+      },
+      {
+        "details": "stopPriceLinkType string Enum: [ VALUE, PERCENT, TICK ]",
+        "field": "stopPriceLinkType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "stopPriceOffset"
+      },
+      {
+        "details": "stopType string Enum: [ STANDARD, BID, ASK, LAST, MARK ]",
+        "field": "stopType"
+      },
+      {
+        "details": "priceLinkBasis string Enum: [ MANUAL, BASE, TRIGGER, LAST, BID, ASK, ASK_BID, MARK, AVERAGE ]",
+        "field": "priceLinkBasis"
+      },
+      {
+        "details": "priceLinkType string Enum: [ VALUE, PERCENT, TICK ]",
+        "field": "priceLinkType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "price"
+      },
+      {
+        "details": "taxLotMethod string Enum: [ FIFO, LIFO, HIGH_COST, LOW_COST, AVERAGE_COST, SPECIFIC_LOT, LOSS_HARVESTER ]",
+        "field": "taxLotMethod"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"orderLegCollection\", \"wrapped\": true } #/components/schemas/OrderLegCollection OrderLegCollection { orderLegType string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] legId integer ($int64) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type str\u2026",
+        "field": "orderLegCollection"
+      },
+      {
+        "details": "number ($double)",
+        "field": "activationPrice"
+      },
+      {
+        "details": "specialInstruction string Enum: [ ALL_OR_NONE, DO_NOT_REDUCE, ALL_OR_NONE_DO_NOT_REDUCE ]",
+        "field": "specialInstruction"
+      },
+      {
+        "details": "orderStrategyType string Enum: [ SINGLE, CANCEL, RECALL, PAIR, FLATTEN, TWO_DAY_SWAP, BLAST_ALL, OCO, TRIGGER ]",
+        "field": "orderStrategyType"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "orderId"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "cancelable"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "editable"
+      },
+      {
+        "details": "status string Enum: [ AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN ]",
+        "field": "status"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "enteredTime"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "closeTime"
+      },
+      {
+        "details": "string",
+        "field": "tag"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "accountNumber"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"orderActivity\", \"wrapped\": true } #/components/schemas/OrderActivity OrderActivity { activityType string Enum: [ EXECUTION, ORDER_ACTION ] executionType string Enum: [ FILL ] quantity number ($double) orderRemainingQuantity number ($double) executionLegs [] xml: OrderedMap { \"name\": \"executionLegs\", \"wrapped\": true } #/components/schemas/ExecutionLeg ExecutionLeg { legId integer ($int64) price number ($double) quantity number ($double) mismarkedQuantity number ($double) instrumentId integer ($int64) time string ($date-time) } }",
+        "field": "orderActivityCollection"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"replacingOrder\", \"wrapped\": true } { }",
+        "field": "replacingOrderCollection"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"childOrder\", \"wrapped\": true } { }",
+        "field": "childOrderStrategies"
+      },
+      {
+        "details": "string",
+        "field": "statusDescription"
+      }
+    ],
+    "name": "Order"
+  },
+  {
+    "fields": [
+      {
+        "details": "session string Enum: [ NORMAL, AM, PM, SEAMLESS ]",
+        "field": "session"
+      },
+      {
+        "details": "duration string Enum: [ DAY, GOOD_TILL_CANCEL, FILL_OR_KILL, IMMEDIATE_OR_CANCEL, END_OF_WEEK, END_OF_MONTH, NEXT_END_OF_MONTH, UNKNOWN ]",
+        "field": "duration"
+      },
+      {
+        "details": "orderTypeRequest string Same as orderType, but does not have UNKNOWN since this type is not allowed as an input Enum: [ MARKET, LIMIT, STOP, STOP_LIMIT, TRAILING_STOP, CABINET, NON_MARKETABLE, MARKET_ON_CLOSE, EXERCISE, TRAILING_STOP_LIMIT, NET_DEBIT, NET_CREDIT, NET_ZERO, LIMIT_ON_CLOSE ]",
+        "field": "orderType"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "cancelTime"
+      },
+      {
+        "details": "complexOrderStrategyType string Enum: [ NONE, COVERED, VERTICAL, BACK_RATIO, CALENDAR, DIAGONAL, STRADDLE, STRANGLE, COLLAR_SYNTHETIC, BUTTERFLY, CONDOR, IRON_CONDOR, VERTICAL_ROLL, COLLAR_WITH_STOCK, DOUBLE_DIAGONAL, UNBALANCED_BUTTERFLY, UNBALANCED_CONDOR, UNBALANCED_IRON_CONDOR, UNBALANCED_VERTICAL_ROLL, MUTUAL_FUND_SWAP, CUSTOM ]",
+        "field": "complexOrderStrategyType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "filledQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "remainingQuantity"
+      },
+      {
+        "details": "string",
+        "field": "destinationLinkName"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "releaseTime"
+      },
+      {
+        "details": "number ($double)",
+        "field": "stopPrice"
+      },
+      {
+        "details": "stopPriceLinkBasis string Enum: [ MANUAL, BASE, TRIGGER, LAST, BID, ASK, ASK_BID, MARK, AVERAGE ]",
+        "field": "stopPriceLinkBasis"
+      },
+      {
+        "details": "stopPriceLinkType string Enum: [ VALUE, PERCENT, TICK ]",
+        "field": "stopPriceLinkType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "stopPriceOffset"
+      },
+      {
+        "details": "stopType string Enum: [ STANDARD, BID, ASK, LAST, MARK ]",
+        "field": "stopType"
+      },
+      {
+        "details": "priceLinkBasis string Enum: [ MANUAL, BASE, TRIGGER, LAST, BID, ASK, ASK_BID, MARK, AVERAGE ]",
+        "field": "priceLinkBasis"
+      },
+      {
+        "details": "priceLinkType string Enum: [ VALUE, PERCENT, TICK ]",
+        "field": "priceLinkType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "price"
+      },
+      {
+        "details": "taxLotMethod string Enum: [ FIFO, LIFO, HIGH_COST, LOW_COST, AVERAGE_COST, SPECIFIC_LOT, LOSS_HARVESTER ]",
+        "field": "taxLotMethod"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"orderLegCollection\", \"wrapped\": true } #/components/schemas/OrderLegCollection OrderLegCollection { orderLegType string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] legId integer ($int64) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type str\u2026",
+        "field": "orderLegCollection"
+      },
+      {
+        "details": "number ($double)",
+        "field": "activationPrice"
+      },
+      {
+        "details": "specialInstruction string Enum: [ ALL_OR_NONE, DO_NOT_REDUCE, ALL_OR_NONE_DO_NOT_REDUCE ]",
+        "field": "specialInstruction"
+      },
+      {
+        "details": "orderStrategyType string Enum: [ SINGLE, CANCEL, RECALL, PAIR, FLATTEN, TWO_DAY_SWAP, BLAST_ALL, OCO, TRIGGER ]",
+        "field": "orderStrategyType"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "orderId"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "cancelable"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "editable"
+      },
+      {
+        "details": "status string Enum: [ AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN ]",
+        "field": "status"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "enteredTime"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "closeTime"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "accountNumber"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"orderActivity\", \"wrapped\": true } #/components/schemas/OrderActivity OrderActivity { activityType string Enum: [ EXECUTION, ORDER_ACTION ] executionType string Enum: [ FILL ] quantity number ($double) orderRemainingQuantity number ($double) executionLegs [] xml: OrderedMap { \"name\": \"executionLegs\", \"wrapped\": true } #/components/schemas/ExecutionLeg ExecutionLeg { legId integer ($int64) price number ($double) quantity number ($double) mismarkedQuantity number ($double) instrumentId integer ($int64) time string ($date-time) } }",
+        "field": "orderActivityCollection"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"replacingOrder\", \"wrapped\": true } { }",
+        "field": "replacingOrderCollection"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"childOrder\", \"wrapped\": true } { }",
+        "field": "childOrderStrategies"
+      },
+      {
+        "details": "string",
+        "field": "statusDescription"
+      }
+    ],
+    "name": "OrderRequest"
+  },
+  {
+    "fields": [
+      {
+        "details": "integer ($int64)",
+        "field": "orderId"
+      },
+      {
+        "details": "#/components/schemas/OrderStrategy OrderStrategy { accountNumber string advancedOrderType string Enum: [ NONE, OTO, OCO, OTOCO, OT2OCO, OT3OCO, BLAST_ALL, OTA, PAIR ] closeTime string ($date-time) enteredTime string ($date-time) orderBalance #/components/schemas/OrderBalance OrderBalance { orderValue number ($double) projectedAvailableFund number ($double) projectedBuyingPower number ($double) projectedCommission number ($double) } orderStrategyType orderStrategyType string Enum: [ SINGLE, CANCEL, RECALL, PAIR, FLATTEN, TWO_DAY_SWAP, BLAST_ALL, OCO, TRIGGER ] orderVersion number session session string Enum: [ NORMAL, AM, PM, SEAMLESS ] status apiOrderStatus string Enum: [ AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN ] allOrNone boolean discretionary boolean duration duration string Enum: [ DAY, GOOD_TILL_CANCEL, FILL_OR_KILL, IMMEDIATE_OR_CANCEL, END_OF_WEEK, END_OF_MONTH, NEXT_END_OF_MONTH, UNKNOWN ] filledQuantity number ($double) orderType orderType string Enum: [ MARKET, LIMIT, STOP, STOP_LIMIT, TRAILING_STOP, CABINET, NON_MARKETABLE, MARKET_ON_CLOSE, EXERCISE, TRAILING_STOP_LIMIT, NET_DEBIT, NET_CREDIT, NET_ZERO, LIMIT_ON_CLOSE, UNKNOWN ] orderValue number ($double) price number ($double) quantity number ($double) remainingQuantity number ($double) sellNonMarginableFirst boolean settlementInstruction settlementInstruction string Enum: [ REGULAR, CASH, NEXT_DAY, UNKNOWN ] strategy complexOrderStrategyType string Enum: [ NONE, COVERED, VERTICAL, BACK_RATIO, CALENDAR, DIAGONAL, STRADDLE, STRANGLE, COLLAR_SYNTHETIC, BUTTERFLY, CONDOR, IRON_CONDOR, VERTICAL_ROLL, COLLAR_WITH_STOCK, DOUBLE_DIAGONAL, UNBALANCED_BUTTERFLY, UNBALANCED_CONDOR, UNBALANCED_IRON_CONDOR, UNBALANCED_VERTICAL_ROLL, MUTUAL_FUND_SWAP, CUSTOM ] amountIndicator amountIndicator string Enum: [ DOLLARS, SHARES, ALL_SHARES, PERCENTAGE, UNKNOWN ] orderLegs [] xml: OrderedMap { \"name\": \"orderLeg\", \"wrapped\": true } #/components/schemas/OrderLeg OrderLeg { askPrice number ($double) bidPrice number ($double) lastPrice number ($double) markPrice number ($double) projectedCommission number ($double) quantity number ($double) finalSymbol string legId number ($long) assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE\u2026",
+        "field": "orderStrategy"
+      },
+      {
+        "details": "#/components/schemas/OrderValidationResult OrderValidationResult { alerts [] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] } accepts [] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] } rejects [] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] } reviews [] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] } warns [] #/components/schemas/OrderValidationDetail OrderValidationDetail { validationRuleName string message string activityMessage string originalSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] overrideName string overrideSeverity APIRuleAction string Enum: [ ACCEPT, ALERT, REJECT, REVIEW, UNKNOWN ] } }",
+        "field": "orderValidationResult"
+      },
+      {
+        "details": "#/components/schemas/CommissionAndFee CommissionAndFee { commission #/components/schemas/Commission Commission { commissionLegs [] #/components/schemas/CommissionLeg CommissionLeg { commissionValues [] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } } fee #/components/schemas/Fees Fees { feeLegs [] #/components/schemas/FeeLeg FeeLeg { feeValues [] #/components/schemas/FeeValue FeeValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } } trueCommission #/components/schemas/Commission Commission { commissionLegs [] #/components/schemas/CommissionLeg CommissionLeg { commissionValues [] #/components/schemas/CommissionValue CommissionValue { value number ($double) type FeeType string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FTT, FUTURES_CLEARING_FEE, FUTURES_DESK_OFFICE_FEE, FUTURES_EXCHANGE_FEE, FUTURES_GLOBEX_FEE, FUTURES_NFA_FEE, FUTURES_PIT_BROKERAGE_FEE, FUTURES_TRANSACTION_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, TEFRA_TAX, STATE_TAX, UNKNOWN ] } } } }",
+        "field": "commissionAndFee"
+      }
+    ],
+    "name": "PreviewOrder"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EXECUTION, ORDER_ACTION ]",
+        "field": "activityType"
+      },
+      {
+        "details": "string Enum: [ FILL ]",
+        "field": "executionType"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "orderRemainingQuantity"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"executionLegs\", \"wrapped\": true } #/components/schemas/ExecutionLeg ExecutionLeg { legId integer ($int64) price number ($double) quantity number ($double) mismarkedQuantity number ($double) instrumentId integer ($int64) time string ($date-time) }",
+        "field": "executionLegs"
+      }
+    ],
+    "name": "OrderActivity"
+  },
+  {
+    "fields": [
+      {
+        "details": "integer ($int64)",
+        "field": "legId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "price"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "mismarkedQuantity"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "time"
+      }
+    ],
+    "name": "ExecutionLeg"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "shortQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "averagePrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "currentDayProfitLoss"
+      },
+      {
+        "details": "number ($double)",
+        "field": "currentDayProfitLossPercentage"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "settledLongQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "settledShortQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "agedQuantity"
+      },
+      {
+        "details": "#/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } }",
+        "field": "instrument"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "maintenanceRequirement"
+      },
+      {
+        "details": "number ($double)",
+        "field": "averageLongPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "averageShortPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "taxLotAverageLongPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "taxLotAverageShortPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longOpenProfitLoss"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortOpenProfitLoss"
+      },
+      {
+        "details": "number ($double)",
+        "field": "previousSessionLongQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "previousSessionShortQuantity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "currentDayCost"
+      }
+    ],
+    "name": "Position"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "message"
+      },
+      {
+        "details": "[] string",
+        "field": "errors"
+      }
+    ],
+    "name": "ServiceError"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "orderLegType"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "legId"
+      },
+      {
+        "details": "#/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } }",
+        "field": "instrument"
+      },
+      {
+        "details": "instruction string Enum: [ BUY, SELL, BUY_TO_COVER, SELL_SHORT, BUY_TO_OPEN, BUY_TO_CLOSE, SELL_TO_OPEN, SELL_TO_CLOSE, EXCHANGE, SELL_SHORT_EXEMPT ]",
+        "field": "instruction"
+      },
+      {
+        "details": "string Enum: [ OPENING, CLOSING, AUTOMATIC ]",
+        "field": "positionEffect"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quantity"
+      },
+      {
+        "details": "string Enum: [ ALL_SHARES, DOLLARS, SHARES ]",
+        "field": "quantityType"
+      },
+      {
+        "details": "string Enum: [ REINVEST, PAYOUT ]",
+        "field": "divCapGains"
+      },
+      {
+        "details": "string",
+        "field": "toSymbol"
+      }
+    ],
+    "name": "OrderLegCollection"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/MarginAccount MarginAccount { type string Enum: [ CASH, MARGIN ] accountNumber string roundTrips integer ($int32) isDayTrader boolean default: false isClosingOnlyRestricted boolean default: false pfcbFlag boolean default: false positions [] #/components/schemas/Position Position { shortQuantity number ($double) averagePrice number ($double) currentDayProfitLoss number ($double) currentDayProfitLossPercentage number ($double) longQuantity number ($double) settledLongQuantity number ($double) settledShortQuantity number ($double) agedQuantity number ($double) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { } #/components/schemas/AccountFixedIncome AccountFixedIncome { maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { } #/components/schemas/AccountOption AccountOption { optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } } marketValue number ($double) maintenanceRequirement number ($double) averageLongPrice number ($double) averageShortPrice number ($double) taxLotAverageLongPrice number ($double) taxLotAverageShortPrice number ($double) longOpenProfitLoss number ($double) shortOpenProfitLoss number ($double) previousSessionLongQuantity number ($double) previousSessionShortQuantity number ($double) currentDayCost number ($double) } initialBalances #/components/schemas/MarginInitialBalance MarginInitialBalance { accruedInterest number ($double) availableFundsNonMarginableTrade number ($double) bondValue number ($double) buyingPower number ($double) cashBalance number ($double) cashAvailableForTrading number ($double) cashReceipts number ($double) dayTradingBuyingPower number ($double)\u2026",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "SecuritiesAccount"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ CASH, MARGIN ]",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "roundTrips"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isDayTrader"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isClosingOnlyRestricted"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "pfcbFlag"
+      },
+      {
+        "details": "[] #/components/schemas/Position Position { shortQuantity number ($double) averagePrice number ($double) currentDayProfitLoss number ($double) currentDayProfitLossPercentage number ($double) longQuantity number ($double) settledLongQuantity number ($double) settledShortQuantity number ($double) agedQuantity number ($double) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { } #/components/schemas/AccountFixedIncome AccountFixedIncome { maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { } #/components/schemas/AccountOption AccountOption { optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } } marketValue number ($double) maintenanceRequirement number ($double) averageLongPrice number ($double) averageShortPrice number ($double) taxLotAverageLongPrice number ($double) taxLotAverageShortPrice number ($double) longOpenProfitLoss number ($double) shortOpenProfitLoss number ($double) previousSessionLongQuantity number ($double) previousSessionShortQuantity number ($double) currentDayCost number ($double) }",
+        "field": "positions"
+      }
+    ],
+    "name": "SecuritiesAccountBase"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ CASH, MARGIN ]",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "roundTrips"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isDayTrader"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isClosingOnlyRestricted"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "pfcbFlag"
+      },
+      {
+        "details": "[] #/components/schemas/Position Position { shortQuantity number ($double) averagePrice number ($double) currentDayProfitLoss number ($double) currentDayProfitLossPercentage number ($double) longQuantity number ($double) settledLongQuantity number ($double) settledShortQuantity number ($double) agedQuantity number ($double) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { } #/components/schemas/AccountFixedIncome AccountFixedIncome { maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { } #/components/schemas/AccountOption AccountOption { optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } } marketValue number ($double) maintenanceRequirement number ($double) averageLongPrice number ($double) averageShortPrice number ($double) taxLotAverageLongPrice number ($double) taxLotAverageShortPrice number ($double) longOpenProfitLoss number ($double) shortOpenProfitLoss number ($double) previousSessionLongQuantity number ($double) previousSessionShortQuantity number ($double) currentDayCost number ($double) }",
+        "field": "positions"
+      },
+      {
+        "details": "#/components/schemas/MarginInitialBalance MarginInitialBalance { accruedInterest number ($double) availableFundsNonMarginableTrade number ($double) bondValue number ($double) buyingPower number ($double) cashBalance number ($double) cashAvailableForTrading number ($double) cashReceipts number ($double) dayTradingBuyingPower number ($double) dayTradingBuyingPowerCall number ($double) dayTradingEquityCall number ($double) equity number ($double) equityPercentage number ($double) liquidationValue number ($double) longMarginValue number ($double) longOptionMarketValue number ($double) longStockValue number ($double) maintenanceCall number ($double) maintenanceRequirement number ($double) margin number ($double) marginEquity number ($double) moneyMarketFund number ($double) mutualFundValue number ($double) regTCall number ($double) shortMarginValue number ($double) shortOptionMarketValue number ($double) shortStockValue number ($double) totalCash number ($double) isInCall number ($double) unsettledCash number ($double) pendingDeposits number ($double) marginBalance number ($double) shortBalance number ($double) accountValue number ($double) }",
+        "field": "initialBalances"
+      },
+      {
+        "details": "#/components/schemas/MarginBalance MarginBalance { availableFunds number ($double) availableFundsNonMarginableTrade number ($double) buyingPower number ($double) buyingPowerNonMarginableTrade number ($double) dayTradingBuyingPower number ($double) dayTradingBuyingPowerCall number ($double) equity number ($double) equityPercentage number ($double) longMarginValue number ($double) maintenanceCall number ($double) maintenanceRequirement number ($double) marginBalance number ($double) regTCall number ($double) shortBalance number ($double) shortMarginValue number ($double) sma number ($double) isInCall number ($double) stockBuyingPower number ($double) optionBuyingPower number ($double) }",
+        "field": "currentBalances"
+      },
+      {
+        "details": "#/components/schemas/MarginBalance MarginBalance { availableFunds number ($double) availableFundsNonMarginableTrade number ($double) buyingPower number ($double) buyingPowerNonMarginableTrade number ($double) dayTradingBuyingPower number ($double) dayTradingBuyingPowerCall number ($double) equity number ($double) equityPercentage number ($double) longMarginValue number ($double) maintenanceCall number ($double) maintenanceRequirement number ($double) marginBalance number ($double) regTCall number ($double) shortBalance number ($double) shortMarginValue number ($double) sma number ($double) isInCall number ($double) stockBuyingPower number ($double) optionBuyingPower number ($double) }",
+        "field": "projectedBalances"
+      }
+    ],
+    "name": "MarginAccount"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "accruedInterest"
+      },
+      {
+        "details": "number ($double)",
+        "field": "availableFundsNonMarginableTrade"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bondValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "buyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashAvailableForTrading"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashReceipts"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dayTradingBuyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dayTradingBuyingPowerCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dayTradingEquityCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "equity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "equityPercentage"
+      },
+      {
+        "details": "number ($double)",
+        "field": "liquidationValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longMarginValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longOptionMarketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longStockValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "maintenanceCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "maintenanceRequirement"
+      },
+      {
+        "details": "number ($double)",
+        "field": "margin"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marginEquity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "moneyMarketFund"
+      },
+      {
+        "details": "number ($double)",
+        "field": "mutualFundValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "regTCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortMarginValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortOptionMarketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortStockValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "totalCash"
+      },
+      {
+        "details": "number ($double)",
+        "field": "isInCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "unsettledCash"
+      },
+      {
+        "details": "number ($double)",
+        "field": "pendingDeposits"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marginBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "accountValue"
+      }
+    ],
+    "name": "MarginInitialBalance"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "availableFunds"
+      },
+      {
+        "details": "number ($double)",
+        "field": "availableFundsNonMarginableTrade"
+      },
+      {
+        "details": "number ($double)",
+        "field": "buyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "buyingPowerNonMarginableTrade"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dayTradingBuyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dayTradingBuyingPowerCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "equity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "equityPercentage"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longMarginValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "maintenanceCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "maintenanceRequirement"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marginBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "regTCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortMarginValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "sma"
+      },
+      {
+        "details": "number ($double)",
+        "field": "isInCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "stockBuyingPower"
+      },
+      {
+        "details": "number ($double)",
+        "field": "optionBuyingPower"
+      }
+    ],
+    "name": "MarginBalance"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ CASH, MARGIN ]",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "roundTrips"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isDayTrader"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "isClosingOnlyRestricted"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "pfcbFlag"
+      },
+      {
+        "details": "[] #/components/schemas/Position Position { shortQuantity number ($double) averagePrice number ($double) currentDayProfitLoss number ($double) currentDayProfitLossPercentage number ($double) longQuantity number ($double) settledLongQuantity number ($double) settledShortQuantity number ($double) agedQuantity number ($double) instrument #/components/schemas/AccountsInstrument AccountsInstrument { oneOf -> #/components/schemas/AccountCashEquivalent AccountCashEquivalent { type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { } #/components/schemas/AccountFixedIncome AccountFixedIncome { maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { } #/components/schemas/AccountOption AccountOption { optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string } } marketValue number ($double) maintenanceRequirement number ($double) averageLongPrice number ($double) averageShortPrice number ($double) taxLotAverageLongPrice number ($double) taxLotAverageShortPrice number ($double) longOpenProfitLoss number ($double) shortOpenProfitLoss number ($double) previousSessionLongQuantity number ($double) previousSessionShortQuantity number ($double) currentDayCost number ($double) }",
+        "field": "positions"
+      },
+      {
+        "details": "#/components/schemas/CashInitialBalance CashInitialBalance { accruedInterest number ($double) cashAvailableForTrading number ($double) cashAvailableForWithdrawal number ($double) cashBalance number ($double) bondValue number ($double) cashReceipts number ($double) liquidationValue number ($double) longOptionMarketValue number ($double) longStockValue number ($double) moneyMarketFund number ($double) mutualFundValue number ($double) shortOptionMarketValue number ($double) shortStockValue number ($double) isInCall number ($double) unsettledCash number ($double) cashDebitCallValue number ($double) pendingDeposits number ($double) accountValue number ($double) }",
+        "field": "initialBalances"
+      },
+      {
+        "details": "#/components/schemas/CashBalance CashBalance { cashAvailableForTrading number ($double) cashAvailableForWithdrawal number ($double) cashCall number ($double) longNonMarginableMarketValue number ($double) totalCash number ($double) cashDebitCallValue number ($double) unsettledCash number ($double) }",
+        "field": "currentBalances"
+      },
+      {
+        "details": "#/components/schemas/CashBalance CashBalance { cashAvailableForTrading number ($double) cashAvailableForWithdrawal number ($double) cashCall number ($double) longNonMarginableMarketValue number ($double) totalCash number ($double) cashDebitCallValue number ($double) unsettledCash number ($double) }",
+        "field": "projectedBalances"
+      }
+    ],
+    "name": "CashAccount"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "accruedInterest"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashAvailableForTrading"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashAvailableForWithdrawal"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashBalance"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bondValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashReceipts"
+      },
+      {
+        "details": "number ($double)",
+        "field": "liquidationValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longOptionMarketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longStockValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "moneyMarketFund"
+      },
+      {
+        "details": "number ($double)",
+        "field": "mutualFundValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortOptionMarketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortStockValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "isInCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "unsettledCash"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashDebitCallValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "pendingDeposits"
+      },
+      {
+        "details": "number ($double)",
+        "field": "accountValue"
+      }
+    ],
+    "name": "CashInitialBalance"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "cashAvailableForTrading"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashAvailableForWithdrawal"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "longNonMarginableMarketValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "totalCash"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cashDebitCallValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "unsettledCash"
+      }
+    ],
+    "name": "CashBalance"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      }
+    ],
+    "name": "TransactionBaseInstrument"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      }
+    ],
+    "name": "AccountsBaseInstrument"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/AccountCashEquivalent AccountCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/AccountEquity AccountEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountFixedIncome AccountFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) maturityDate string ($date-time) factor number ($double) variableRate number ($double) } #/components/schemas/AccountMutualFund AccountMutualFund { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/AccountOption AccountOption { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) optionDeliverables [] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] } putCall string Enum: [ PUT, CALL, UNKNOWN ] optionMultiplier integer ($int32) type string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ] underlyingSymbol string }",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "AccountsInstrument"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex Forex { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_\u2026",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "TransactionInstrument"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "TransactionCashEquivalent"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ]",
+        "field": "type"
+      }
+    ],
+    "name": "CollectiveInvestment"
+  },
+  {
+    "fields": [],
+    "name": "instruction"
+  },
+  {
+    "fields": [],
+    "name": "assetType"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      }
+    ],
+    "name": "Currency"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "TransactionEquity"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "maturityDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "factor"
+      },
+      {
+        "details": "number ($double)",
+        "field": "multiplier"
+      },
+      {
+        "details": "number ($double)",
+        "field": "variableRate"
+      }
+    ],
+    "name": "TransactionFixedIncome"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ STANDARD, NBBO, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "#/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) }",
+        "field": "baseCurrency"
+      },
+      {
+        "details": "#/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) }",
+        "field": "counterCurrency"
+      }
+    ],
+    "name": "Forex"
+  },
+  {
+    "fields": [
+      {
+        "details": "boolean default: false",
+        "field": "activeContract"
+      },
+      {
+        "details": "string Enum: [ STANDARD, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "expirationDate"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "lastTradingDate"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "firstNoticeDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "multiplier"
+      },
+      {
+        "details": "#/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex Forex { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_\u2026",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "Future"
+  },
+  {
+    "fields": [
+      {
+        "details": "boolean default: false",
+        "field": "activeContract"
+      },
+      {
+        "details": "string Enum: [ BROAD_BASED, NARROW_BASED, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "#/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex Forex { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_\u2026",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "Index"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string",
+        "field": "fundFamilyName"
+      },
+      {
+        "details": "string",
+        "field": "fundFamilySymbol"
+      },
+      {
+        "details": "string",
+        "field": "fundGroup"
+      },
+      {
+        "details": "string Enum: [ NOT_APPLICABLE, OPEN_END_NON_TAXABLE, OPEN_END_TAXABLE, NO_LOAD_NON_TAXABLE, NO_LOAD_TAXABLE, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "exchangeCutoffTime"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "purchaseCutoffTime"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "redemptionCutoffTime"
+      }
+    ],
+    "name": "TransactionMutualFund"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "expirationDate"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/TransactionAPIOptionDeliverable TransactionAPIOptionDeliverable { rootSymbol string strikePercent integer ($int64) deliverableNumber integer ($int64) deliverableUnits number ($double) deliverable #/components/schemas/TransactionInstrument TransactionInstrument { oneOf -> #/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY\u2026",
+        "field": "optionDeliverables"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "optionPremiumMultiplier"
+      },
+      {
+        "details": "string Enum: [ PUT, CALL, UNKNOWN ]",
+        "field": "putCall"
+      },
+      {
+        "details": "number ($double)",
+        "field": "strikePrice"
+      },
+      {
+        "details": "string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "underlyingSymbol"
+      },
+      {
+        "details": "string",
+        "field": "underlyingCusip"
+      },
+      {
+        "details": "#/components/schemas/TransactionInstrument TransactionInstrument { oneOf -> #/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex\u2026",
+        "field": "deliverable"
+      }
+    ],
+    "name": "TransactionOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ TBD, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "Product"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "AccountCashEquivalent"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      }
+    ],
+    "name": "AccountEquity"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "maturityDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "factor"
+      },
+      {
+        "details": "number ($double)",
+        "field": "variableRate"
+      }
+    ],
+    "name": "AccountFixedIncome"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      }
+    ],
+    "name": "AccountMutualFund"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType *"
+      },
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "instrumentId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"optionDeliverables\", \"wrapped\": true } #/components/schemas/AccountAPIOptionDeliverable AccountAPIOptionDeliverable { symbol string ($int64) deliverableUnits number ($double) apiCurrencyType string Enum: [ USD, CAD, EUR, JPY ] assetType assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ] }",
+        "field": "optionDeliverables"
+      },
+      {
+        "details": "string Enum: [ PUT, CALL, UNKNOWN ]",
+        "field": "putCall"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "optionMultiplier"
+      },
+      {
+        "details": "string Enum: [ VANILLA, BINARY, BARRIER, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "underlyingSymbol"
+      }
+    ],
+    "name": "AccountOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "string ($int64)",
+        "field": "symbol"
+      },
+      {
+        "details": "number ($double)",
+        "field": "deliverableUnits"
+      },
+      {
+        "details": "string Enum: [ USD, CAD, EUR, JPY ]",
+        "field": "apiCurrencyType"
+      },
+      {
+        "details": "assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType"
+      }
+    ],
+    "name": "AccountAPIOptionDeliverable"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "rootSymbol"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "strikePercent"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "deliverableNumber"
+      },
+      {
+        "details": "number ($double)",
+        "field": "deliverableUnits"
+      },
+      {
+        "details": "#/components/schemas/TransactionInstrument TransactionInstrument { oneOf -> #/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex\u2026",
+        "field": "deliverable"
+      },
+      {
+        "details": "assetType string Enum: [ EQUITY, MUTUAL_FUND, OPTION, FUTURE, FOREX, INDEX, CASH_EQUIVALENT, FIXED_INCOME, PRODUCT, CURRENCY, COLLECTIVE_INVESTMENT ]",
+        "field": "assetType"
+      }
+    ],
+    "name": "TransactionAPIOptionDeliverable"
+  },
+  {
+    "fields": [],
+    "name": "apiOrderStatus"
+  },
+  {
+    "fields": [],
+    "name": "TransactionType"
+  },
+  {
+    "fields": [
+      {
+        "details": "integer ($int64)",
+        "field": "activityId"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "time"
+      },
+      {
+        "details": "#/components/schemas/UserDetails UserDetails { cdDomainId string login string type string Enum: [ ADVISOR_USER, BROKER_USER, CLIENT_USER, SYSTEM_USER, UNKNOWN ] userId integer ($int64) systemUserName string firstName string lastName string brokerRepCode string }",
+        "field": "user"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "TransactionType string Enum: [ TRADE, RECEIVE_AND_DELIVER, DIVIDEND_OR_INTEREST, ACH_RECEIPT, ACH_DISBURSEMENT, CASH_RECEIPT, CASH_DISBURSEMENT, ELECTRONIC_FUND, WIRE_OUT, WIRE_IN, JOURNAL, MEMORANDUM, MARGIN_CALL, MONEY_MARKET, SMA_ADJUSTMENT ]",
+        "field": "type"
+      },
+      {
+        "details": "string Enum: [ VALID, INVALID, PENDING, UNKNOWN ]",
+        "field": "status"
+      },
+      {
+        "details": "string Enum: [ CASH, MARGIN, SHORT, DIV, INCOME, UNKNOWN ]",
+        "field": "subAccount"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "tradeDate"
+      },
+      {
+        "details": "string ($date-time)",
+        "field": "settlementDate"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "positionId"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "orderId"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netAmount"
+      },
+      {
+        "details": "string Enum: [ ACTIVITY_CORRECTION, EXECUTION, ORDER_ACTION, TRANSFER, UNKNOWN ]",
+        "field": "activityType"
+      },
+      {
+        "details": "[] xml: OrderedMap { \"name\": \"transferItems\", \"wrapped\": true } #/components/schemas/TransferItem TransferItem { instrument #/components/schemas/TransactionInstrument TransactionInstrument { oneOf -> #/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string\u2026",
+        "field": "transferItems"
+      }
+    ],
+    "name": "Transaction"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "cdDomainId"
+      },
+      {
+        "details": "string",
+        "field": "login"
+      },
+      {
+        "details": "string Enum: [ ADVISOR_USER, BROKER_USER, CLIENT_USER, SYSTEM_USER, UNKNOWN ]",
+        "field": "type"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "userId"
+      },
+      {
+        "details": "string",
+        "field": "systemUserName"
+      },
+      {
+        "details": "string",
+        "field": "firstName"
+      },
+      {
+        "details": "string",
+        "field": "lastName"
+      },
+      {
+        "details": "string",
+        "field": "brokerRepCode"
+      }
+    ],
+    "name": "UserDetails"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/TransactionInstrument TransactionInstrument { oneOf -> #/components/schemas/TransactionCashEquivalent TransactionCashEquivalent { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ SWEEP_VEHICLE, SAVINGS, MONEY_MARKET_FUND, UNKNOWN ] } #/components/schemas/CollectiveInvestment CollectiveInvestment { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ UNIT_INVESTMENT_TRUST, EXCHANGE_TRADED_FUND, CLOSED_END_FUND, INDEX, UNITS ] } #/components/schemas/Currency Currency { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) } #/components/schemas/TransactionEquity TransactionEquity { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ COMMON_STOCK, PREFERRED_STOCK, DEPOSITORY_RECEIPT, PREFERRED_DEPOSITORY_RECEIPT, RESTRICTED_STOCK, COMPONENT_UNIT, RIGHT, WARRANT, CONVERTIBLE_PREFERRED_STOCK, CONVERTIBLE_STOCK, LIMITED_PARTNERSHIP, WHEN_ISSUED, UNKNOWN ] } #/components/schemas/TransactionFixedIncome TransactionFixedIncome { assetType * string Enum: [ EQUITY, OPTION, INDEX, MUTUAL_FUND, CASH_EQUIVALENT, FIXED_INCOME, CURRENCY, COLLECTIVE_INVESTMENT ] cusip string symbol string description string instrumentId integer ($int64) netChange number ($double) type string Enum: [ BOND_UNIT, CERTIFICATE_OF_DEPOSIT, CONVERTIBLE_BOND, COLLATERALIZED_MORTGAGE_OBLIGATION, CORPORATE_BOND, GOVERNMENT_MORTGAGE, GNMA_BONDS, MUNICIPAL_ASSESSMENT_DISTRICT, MUNICIPAL_BOND, OTHER_GOVERNMENT, SHORT_TERM_PAPER, US_TREASURY_BOND, US_TREASURY_BILL, US_TREASURY_NOTE, US_TREASURY_ZERO_COUPON, AGENCY_BOND, WHEN_AS_AND_IF_ISSUED_BOND, ASSET_BACKED_SECURITY, UNKNOWN ] maturityDate string ($date-time) factor number ($double) multiplier number ($double) variableRate number ($double) } #/components/schemas/Forex\u2026",
+        "field": "instrument"
+      },
+      {
+        "details": "number ($double)",
+        "field": "amount"
+      },
+      {
+        "details": "number ($double)",
+        "field": "cost"
+      },
+      {
+        "details": "number ($double)",
+        "field": "price"
+      },
+      {
+        "details": "string Enum: [ COMMISSION, SEC_FEE, STR_FEE, R_FEE, CDSC_FEE, OPT_REG_FEE, ADDITIONAL_FEE, MISCELLANEOUS_FEE, FUTURES_EXCHANGE_FEE, LOW_PROCEEDS_COMMISSION, BASE_CHARGE, GENERAL_CHARGE, GST_FEE, TAF_FEE, INDEX_OPTION_FEE, UNKNOWN ]",
+        "field": "feeType"
+      },
+      {
+        "details": "string Enum: [ OPENING, CLOSING, AUTOMATIC, UNKNOWN ]",
+        "field": "positionEffect"
+      }
+    ],
+    "name": "TransferItem"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/UserPreferenceAccount UserPreferenceAccount { accountNumber string primaryAccount boolean default: false type string nickName string accountColor string Green | Blue displayAcctId string autoPositionEffect boolean default: false }",
+        "field": "accounts"
+      },
+      {
+        "details": "[] #/components/schemas/StreamerInfo StreamerInfo { streamerSocketUrl string schwabClientCustomerId string schwabClientCorrelId string schwabClientChannel string schwabClientFunctionId string }",
+        "field": "streamerInfo"
+      },
+      {
+        "details": "[] #/components/schemas/Offer Offer { level2Permissions boolean default: false mktDataPermission string }",
+        "field": "offers"
+      }
+    ],
+    "name": "UserPreference"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "accountNumber"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "primaryAccount"
+      },
+      {
+        "details": "string",
+        "field": "type"
+      },
+      {
+        "details": "string",
+        "field": "nickName"
+      },
+      {
+        "details": "string Green | Blue",
+        "field": "accountColor"
+      },
+      {
+        "details": "string",
+        "field": "displayAcctId"
+      },
+      {
+        "details": "boolean default: false",
+        "field": "autoPositionEffect"
+      }
+    ],
+    "name": "UserPreferenceAccount"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "streamerSocketUrl"
+      },
+      {
+        "details": "string",
+        "field": "schwabClientCustomerId"
+      },
+      {
+        "details": "string",
+        "field": "schwabClientCorrelId"
+      },
+      {
+        "details": "string",
+        "field": "schwabClientChannel"
+      },
+      {
+        "details": "string",
+        "field": "schwabClientFunctionId"
+      }
+    ],
+    "name": "StreamerInfo"
+  },
+  {
+    "fields": [
+      {
+        "details": "boolean default: false",
+        "field": "level2Permissions"
+      },
+      {
+        "details": "string",
+        "field": "mktDataPermission"
+      }
+    ],
+    "name": "Offer"
+  }
+]

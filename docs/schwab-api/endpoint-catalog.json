@@ -1,0 +1,1897 @@
+{
+  "generated_at": "2026-05-04T23:55:21-07:00",
+  "products": {
+    "accounts_and_trading": {
+      "base_url": "https://api.schwabapi.com/trader/v1",
+      "endpoints": [
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Account numbers in plain text cannot be used outside of headers or request/response bodies. As the first step consumers must invoke this service to retrieve the list of plain text/encrypted value pairs, and use encrypted account values for all subsequent calls for any accountNumber request.",
+          "method": "GET",
+          "operation_id": "getAccountNumbers",
+          "parameters": [],
+          "path": "/accounts/accountNumbers",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "List of valid \"accounts\", matching the provided input parameters.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get list of account numbers and their encrypted values",
+          "tag": "Accounts"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "All the linked account information for the user logged in. The balances on these accounts are displayed by default however the positions on these accounts will be displayed based on the \"positions\" flag.",
+          "method": "GET",
+          "operation_id": "getAccounts",
+          "parameters": [
+            {
+              "description": "This allows one to determine which fields they want returned. Possible value in this String can be: ; positions ; Example:; fields=positions",
+              "in": "query",
+              "name": "fields",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "List of valid \"accounts\", matching the provided input parameters.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get linked account(s) balances and positions for the logged in user.",
+          "tag": "Accounts"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Specific account information with balances and positions. The balance information on these accounts is displayed by default but Positions will be returned based on the \"positions\" flag.",
+          "method": "GET",
+          "operation_id": "getAccount",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "This allows one to determine which fields they want returned. Possible values in this String can be: ; positions ; Example:; fields=positions",
+              "in": "query",
+              "name": "fields",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts/{accountNumber}",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "A valid account, matching the provided input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get a specific account balance and positions for the logged in user.",
+          "tag": "Accounts"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "All orders for a specific account. Orders retrieved can be filtered based on input parameters below. Maximum date range is 1 year.",
+          "method": "GET",
+          "operation_id": "getOrdersByPathParam",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The max number of orders to retrieve. Default is 3000.",
+              "in": "query",
+              "name": "maxResults",
+              "required": false,
+              "type": "integer ($int64)"
+            },
+            {
+              "description": "Specifies that no orders entered before this time should be returned. Valid ISO-8601 formats are :; yyyy-MM-dd'T'HH:mm:ss.SSSZ Example fromEnteredTime is '2024-03-29T00:00:00.000Z'. 'toEnteredTime' must also be set.",
+              "in": "query",
+              "name": "fromEnteredTime",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that no orders entered after this time should be returned.Valid ISO-8601 formats are :; yyyy-MM-dd'T'HH:mm:ss.SSSZ . Example toEnteredTime is '2024-04-28T23:59:59.000Z'. 'fromEnteredTime' must also be set.",
+              "in": "query",
+              "name": "toEnteredTime",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that only orders of this status should be returned. Available values : AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN",
+              "in": "query",
+              "name": "status",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/orders",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "A List of orders for the account, matching the provided input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get all orders for a specific account.",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Place an order for a specific account.",
+          "method": "POST",
+          "operation_id": "placeOrder",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/orders",
+          "product": "accounts-and-trading",
+          "request_body": {
+            "content_types": [
+              "application/json"
+            ],
+            "description": "The new Order Object.",
+            "example_json": "{\n\"session\"\n: \n\"NORMAL\"\n,\n\"duration\"\n: \n\"DAY\"\n,\n\"orderType\"\n: \n\"MARKET\"\n,\n\"cancelTime\"\n: \n\"2026-05-05T06:45:48.040Z\"\n,\n\"complexOrderStrategyType\"\n: \n\"NONE\"\n,\n\"quantity\"\n: \n0\n,\n\"filledQuantity\"\n: \n0\n,\n\"remainingQuantity\"\n: \n0\n,\n\"destinationLinkName\"\n: \n\"string\"\n,\n\"releaseTime\"\n: \n\"2026-05-05T06:45:48.040Z\"\n,\n\"stopPrice\"\n: \n0\n,\n\"stopPriceLinkBasis\"\n: \n\"MANUAL\"\n,\n\"stopPriceLinkType\"\n: \n\"VALUE\"\n,\n\"stopPriceOffset\"\n: \n0\n,\n\"stopType\"\n: \n\"STANDARD\"\n,\n\"priceLinkBasis\"\n: \n\"MANUAL\"\n,\n\"priceLinkType\"\n: \n\"VALUE\"\n,\n\"price\"\n: \n0\n,\n\"taxLotMethod\"\n: \n\"FIFO\"\n,\n\"orderLegCollection\"\n: [\n    {\n\"orderLegType\"\n: \n\"EQUITY\"\n,\n\"legId\"\n: \n0\n,\n\"instrument\"\n: {\n\"cusip\"\n: \n\"string\"\n,\n\"symbol\"\n: \n\"string\"\n,\n\"description\"\n: \n\"string\"\n,\n\"instrumentId\"\n: \n0\n,\n\"netChange\"\n: \n0\n,\n\"type\"\n: \n\"SWEEP_VEHICLE\"\n      },\n\"instruction\"\n: \n\"BUY\"\n,\n\"positionEffect\"\n: \n\"OPENING\"\n,\n\"quantity\"\n: \n0\n,\n\"quantityType\"\n: \n\"ALL_SHARES\"\n,\n\"divCapGains\"\n: \n\"REINVEST\"\n,\n\"toSymbol\"\n: \n\"string\"\n    }\n  ],\n\"activationPrice\"\n: \n0\n,\n\"specialInstruction\"\n: \n\"ALL_OR_NONE\"\n,\n\"orderStrategyType\"\n: \n\"SINGLE\"\n,\n\"orderId\"\n: \n0\n,\n\"cancelable\"\n: \nfalse\n,\n\"editable\"\n: \nfalse\n,\n\"status\"\n: \n\"AWAITING_PARENT_ORDER\"\n,\n\"enteredTime\"\n: \n\"2026-05-05T06:45:48.040Z\"\n,\n\"closeTime\"\n: \n\"2026-05-05T06:45:48.040Z\"\n,\n\"accountNumber\"\n: \n0\n,\n\"orderActivityCollection\"\n: [\n    {\n\"activityType\"\n: \n\"EXECUTION\"\n,\n\"executionType\"\n: \n\"FILL\"\n,\n\"quantity\"\n: \n0\n,\n\"orderRemainingQuantity\"\n: \n0\n,\n\"executionLegs\"\n: [\n        {\n\"legId\"\n: \n0\n,\n\"price\"\n: \n0\n,\n\"quantity\"\n: \n0\n,\n\"mismarkedQuantity\"\n: \n0\n,\n\"instrumentId\"\n: \n0\n,\n\"time\"\n: \n\"2026-05-05T06:45:48.040Z\"\n        }\n      ]\n    }\n  ],\n\"replacingOrderCollection\"\n: [\n\"string\"\n  ],\n\"childOrderStrategies\"\n: [\n\"string\"\n  ],\n\"statusDescription\"\n: \n\"string\"\n}",
+            "required": true,
+            "schema_refs": []
+          },
+          "responses": [
+            {
+              "code": "201",
+              "description": "Empty response body if an order was successfully placed/created.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Place order for a specific account.",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Get a specific order by its ID, for a specific account",
+          "method": "GET",
+          "operation_id": "getOrder",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The ID of the order being retrieved.",
+              "in": "path",
+              "name": "orderId",
+              "required": true,
+              "type": "integer ($int64)"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/orders/{orderId}",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "An order object, matching the input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get a specific order by its ID, for a specific account",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Cancel a specific order for a specific account;",
+          "method": "DELETE",
+          "operation_id": "cancelOrder",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The ID of the order being cancelled",
+              "in": "path",
+              "name": "orderId",
+              "required": true,
+              "type": "integer ($int64)"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/orders/{orderId}",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "Empty response body if an order was successfully canceled.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Cancel an order for a specific account",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Replace an existing order for an account. The existing order will be replaced by the new order. Once replaced, the old order will be canceled and a new order will be created.",
+          "method": "PUT",
+          "operation_id": "replaceOrder",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The ID of the order being retrieved.",
+              "in": "path",
+              "name": "orderId",
+              "required": true,
+              "type": "integer ($int64)"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/orders/{orderId}",
+          "product": "accounts-and-trading",
+          "request_body": {
+            "content_types": [
+              "application/json"
+            ],
+            "description": "The Order Object.",
+            "example_json": "{\n\"session\"\n: \n\"NORMAL\"\n,\n\"duration\"\n: \n\"DAY\"\n,\n\"orderType\"\n: \n\"MARKET\"\n,\n\"cancelTime\"\n: \n\"2026-05-05T06:45:48.050Z\"\n,\n\"complexOrderStrategyType\"\n: \n\"NONE\"\n,\n\"quantity\"\n: \n0\n,\n\"filledQuantity\"\n: \n0\n,\n\"remainingQuantity\"\n: \n0\n,\n\"destinationLinkName\"\n: \n\"string\"\n,\n\"releaseTime\"\n: \n\"2026-05-05T06:45:48.050Z\"\n,\n\"stopPrice\"\n: \n0\n,\n\"stopPriceLinkBasis\"\n: \n\"MANUAL\"\n,\n\"stopPriceLinkType\"\n: \n\"VALUE\"\n,\n\"stopPriceOffset\"\n: \n0\n,\n\"stopType\"\n: \n\"STANDARD\"\n,\n\"priceLinkBasis\"\n: \n\"MANUAL\"\n,\n\"priceLinkType\"\n: \n\"VALUE\"\n,\n\"price\"\n: \n0\n,\n\"taxLotMethod\"\n: \n\"FIFO\"\n,\n\"orderLegCollection\"\n: [\n    {\n\"orderLegType\"\n: \n\"EQUITY\"\n,\n\"legId\"\n: \n0\n,\n\"instrument\"\n: {\n\"cusip\"\n: \n\"string\"\n,\n\"symbol\"\n: \n\"string\"\n,\n\"description\"\n: \n\"string\"\n,\n\"instrumentId\"\n: \n0\n,\n\"netChange\"\n: \n0\n,\n\"type\"\n: \n\"SWEEP_VEHICLE\"\n      },\n\"instruction\"\n: \n\"BUY\"\n,\n\"positionEffect\"\n: \n\"OPENING\"\n,\n\"quantity\"\n: \n0\n,\n\"quantityType\"\n: \n\"ALL_SHARES\"\n,\n\"divCapGains\"\n: \n\"REINVEST\"\n,\n\"toSymbol\"\n: \n\"string\"\n    }\n  ],\n\"activationPrice\"\n: \n0\n,\n\"specialInstruction\"\n: \n\"ALL_OR_NONE\"\n,\n\"orderStrategyType\"\n: \n\"SINGLE\"\n,\n\"orderId\"\n: \n0\n,\n\"cancelable\"\n: \nfalse\n,\n\"editable\"\n: \nfalse\n,\n\"status\"\n: \n\"AWAITING_PARENT_ORDER\"\n,\n\"enteredTime\"\n: \n\"2026-05-05T06:45:48.050Z\"\n,\n\"closeTime\"\n: \n\"2026-05-05T06:45:48.050Z\"\n,\n\"accountNumber\"\n: \n0\n,\n\"orderActivityCollection\"\n: [\n    {\n\"activityType\"\n: \n\"EXECUTION\"\n,\n\"executionType\"\n: \n\"FILL\"\n,\n\"quantity\"\n: \n0\n,\n\"orderRemainingQuantity\"\n: \n0\n,\n\"executionLegs\"\n: [\n        {\n\"legId\"\n: \n0\n,\n\"price\"\n: \n0\n,\n\"quantity\"\n: \n0\n,\n\"mismarkedQuantity\"\n: \n0\n,\n\"instrumentId\"\n: \n0\n,\n\"time\"\n: \n\"2026-05-05T06:45:48.050Z\"\n        }\n      ]\n    }\n  ],\n\"replacingOrderCollection\"\n: [\n\"string\"\n  ],\n\"childOrderStrategies\"\n: [\n\"string\"\n  ],\n\"statusDescription\"\n: \n\"string\"\n}",
+            "required": true,
+            "schema_refs": []
+          },
+          "responses": [
+            {
+              "code": "201",
+              "description": "Empty response body if an order was successfully replaced/created.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Replace order for a specific account",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Get all orders for all accounts;",
+          "method": "GET",
+          "operation_id": "getOrdersByQueryParam",
+          "parameters": [
+            {
+              "description": "The max number of orders to retrieve. Default is 3000.",
+              "in": "query",
+              "name": "maxResults",
+              "required": false,
+              "type": "integer ($int64)"
+            },
+            {
+              "description": "Specifies that no orders entered before this time should be returned. Valid ISO-8601 formats are- yyyy-MM-dd'T'HH:mm:ss.SSSZ Date must be within 60 days from today's date. 'toEnteredTime' must also be set.",
+              "in": "query",
+              "name": "fromEnteredTime",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that no orders entered after this time should be returned.Valid ISO-8601 formats are - yyyy-MM-dd'T'HH:mm:ss.SSSZ. 'fromEnteredTime' must also be set.",
+              "in": "query",
+              "name": "toEnteredTime",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that only orders of this status should be returned. Available values : AWAITING_PARENT_ORDER, AWAITING_CONDITION, AWAITING_STOP_CONDITION, AWAITING_MANUAL_REVIEW, ACCEPTED, AWAITING_UR_OUT, PENDING_ACTIVATION, QUEUED, WORKING, REJECTED, PENDING_CANCEL, CANCELED, PENDING_REPLACE, REPLACED, FILLED, EXPIRED, NEW, AWAITING_RELEASE_TIME, PENDING_ACKNOWLEDGEMENT, PENDING_RECALL, UNKNOWN",
+              "in": "query",
+              "name": "status",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/orders",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "A List of orders for the specified account or if its not mentioned, for all the linked accounts, matching the provided input parameters.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get all orders for all accounts",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Preview an order for a specific account.",
+          "method": "POST",
+          "operation_id": "previewOrder",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/previewOrder",
+          "product": "accounts-and-trading",
+          "request_body": {
+            "content_types": [
+              "application/json"
+            ],
+            "description": "The Order Object.",
+            "example_json": "{\n\"orderId\"\n: \n0\n,\n\"orderStrategy\"\n: {\n\"accountNumber\"\n: \n\"string\"\n,\n\"advancedOrderType\"\n: \n\"NONE\"\n,\n\"closeTime\"\n: \n\"2026-05-05T06:45:48.056Z\"\n,\n\"enteredTime\"\n: \n\"2026-05-05T06:45:48.056Z\"\n,\n\"orderBalance\"\n: {\n\"orderValue\"\n: \n0\n,\n\"projectedAvailableFund\"\n: \n0\n,\n\"projectedBuyingPower\"\n: \n0\n,\n\"projectedCommission\"\n: \n0\n    },\n\"orderStrategyType\"\n: \n\"SINGLE\"\n,\n\"orderVersion\"\n: \n0\n,\n\"session\"\n: \n\"NORMAL\"\n,\n\"status\"\n: \n\"AWAITING_PARENT_ORDER\"\n,\n\"allOrNone\"\n: \ntrue\n,\n\"discretionary\"\n: \ntrue\n,\n\"duration\"\n: \n\"DAY\"\n,\n\"filledQuantity\"\n: \n0\n,\n\"orderType\"\n: \n\"MARKET\"\n,\n\"orderValue\"\n: \n0\n,\n\"price\"\n: \n0\n,\n\"quantity\"\n: \n0\n,\n\"remainingQuantity\"\n: \n0\n,\n\"sellNonMarginableFirst\"\n: \ntrue\n,\n\"settlementInstruction\"\n: \n\"REGULAR\"\n,\n\"strategy\"\n: \n\"NONE\"\n,\n\"amountIndicator\"\n: \n\"DOLLARS\"\n,\n\"orderLegs\"\n: [\n      {\n\"askPrice\"\n: \n0\n,\n\"bidPrice\"\n: \n0\n,\n\"lastPrice\"\n: \n0\n,\n\"markPrice\"\n: \n0\n,\n\"projectedCommission\"\n: \n0\n,\n\"quantity\"\n: \n0\n,\n\"finalSymbol\"\n: \n\"string\"\n,\n\"legId\"\n: \n0\n,\n\"assetType\"\n: \n\"EQUITY\"\n,\n\"instruction\"\n: \n\"BUY\"\n      }\n    ]\n  },\n\"orderValidationResult\"\n: {\n\"alerts\"\n: [\n      {\n\"validationRuleName\"\n: \n\"string\"\n,\n\"message\"\n: \n\"string\"\n,\n\"activityMessage\"\n: \n\"string\"\n,\n\"originalSeverity\"\n: \n\"ACCEPT\"\n,\n\"overrideName\"\n: \n\"string\"\n,\n\"overrideSeverity\"\n: \n\"ACCEPT\"\n      }\n    ],\n\"accepts\"\n: [\n      {\n\"validationRuleName\"\n: \n\"string\"\n,\n\"message\"\n: \n\"string\"\n,\n\"activityMessage\"\n: \n\"string\"\n,\n\"originalSeverity\"\n: \n\"ACCEPT\"\n,\n\"overrideName\"\n: \n\"string\"\n,\n\"overrideSeverity\"\n: \n\"ACCEPT\"\n      }\n    ],\n\"rejects\"\n: [\n      {\n\"validationRuleName\"\n: \n\"string\"\n,\n\"message\"\n: \n\"string\"\n,\n\"activityMessage\"\n: \n\"string\"\n,\n\"originalSeverity\"\n: \n\"ACCEPT\"\n,\n\"overrideName\"\n: \n\"string\"\n,\n\"overrideSeverity\"\n: \n\"ACCEPT\"\n      }\n    ],\n\"reviews\"\n: [\n      {\n\"validationRuleName\"\n: \n\"string\"\n,\n\"message\"\n: \n\"string\"\n,\n\"activityMessage\"\n: \n\"string\"\n,\n\"originalSeverity\"\n: \n\"ACCEPT\"\n,\n\"overrideName\"\n: \n\"string\"\n,\n\"overrideSeverity\"\n: \n\"ACCEPT\"\n      }\n    ],\n\"warns\"\n: [\n      {\n\"validationRuleName\"\n: \n\"string\"\n,\n\"message\"\n: \n\"string\"\n,\n\"activityMessage\"\n: \n\"string\"\n,\n\"originalSeverity\"\n: \n\"ACCEPT\"\n,\n\"overrideName\"\n: \n\"string\"\n,\n\"overrideSeverity\"\n: \n\"ACCEPT\"\n      }\n    ]\n  },\n\"commissionAndFee\"\n: {\n\"commission\"\n: {\n\"commissionLegs\"\n: [\n        {\n\"commissionValues\"\n: [\n            {\n\"value\"\n: \n0\n,\n\"type\"\n: \n\"COMMISSION\"\n            }\n          ]\n        }\n      ]\n    },\n\"fee\"\n: {\n\"feeLegs\"\n: [\n        {\n\"feeValues\"\n: [\n            {\n\"value\"\n: \n0\n,\n\"type\"\n: \n\"COMMISSION\"\n            }\n          ]\n        }\n      ]\n    },\n\"trueCommission\"\n: {\n\"commissionLegs\"\n: [\n        {\n\"commissionValues\"\n: [\n            {\n\"value\"\n: \n0\n,\n\"type\"\n: \n\"COMMISSION\"\n            }\n          ]\n        }\n      ]\n    }\n  }\n}",
+            "required": true,
+            "schema_refs": []
+          },
+          "responses": [
+            {
+              "code": "200",
+              "description": "An order object, matching the input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Preview order for a specific account.",
+          "tag": "Orders"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "All transactions for a specific account. Maximum number of transactions in response is 3000. Maximum date range is 1 year.",
+          "method": "GET",
+          "operation_id": "getTransactionsByPathParam",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that no transactions entered before this time should be returned. Valid ISO-8601 formats are :; yyyy-MM-dd'T'HH:mm:ss.SSSZ . Example start date is '2024-03-28T21:10:42.000Z'. The 'endDate' must also be set.",
+              "in": "query",
+              "name": "startDate",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that no transactions entered after this time should be returned.Valid ISO-8601 formats are :; yyyy-MM-dd'T'HH:mm:ss.SSSZ . Example start date is '2024-05-10T21:10:42.000Z'. The 'startDate' must also be set.",
+              "in": "query",
+              "name": "endDate",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "It filters all the transaction activities based on the symbol specified. NOTE: If there is any special character in the symbol, please send th encoded value.",
+              "in": "query",
+              "name": "symbol",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Specifies that only transactions of this status should be returned. Available values : TRADE, RECEIVE_AND_DELIVER, DIVIDEND_OR_INTEREST, ACH_RECEIPT, ACH_DISBURSEMENT, CASH_RECEIPT, CASH_DISBURSEMENT, ELECTRONIC_FUND, WIRE_OUT, WIRE_IN, JOURNAL, MEMORANDUM, MARGIN_CALL, MONEY_MARKET, SMA_ADJUSTMENT",
+              "in": "query",
+              "name": "types",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/transactions",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "A List of orders for the account, matching the provided input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get all transactions information for a specific account.",
+          "tag": "Transactions"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Get specific transaction information for a specific account",
+          "method": "GET",
+          "operation_id": "getTransactionsById",
+          "parameters": [
+            {
+              "description": "The encrypted ID of the account",
+              "in": "path",
+              "name": "accountNumber",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The ID of the transaction being retrieved.",
+              "in": "path",
+              "name": "transactionId",
+              "required": true,
+              "type": "integer ($int64)"
+            }
+          ],
+          "path": "/accounts/{accountNumber}/transactions/{transactionId}",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "A List of orders for the account, matching the provided input parameters",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get specific transaction information for a specific account",
+          "tag": "Transactions"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/trader/v1",
+          "description": "Get user preference information for the logged in user.",
+          "method": "GET",
+          "operation_id": "getUserPreference",
+          "parameters": [],
+          "path": "/userPreference",
+          "product": "accounts-and-trading",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "List of user preference values.",
+              "headers": []
+            },
+            {
+              "code": "400",
+              "description": "An error message indicating the validation problem with the request.",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "An error message indicating either authorization token is invalid or there are no accounts the caller is allowed to view or use for trading that are registered with the provided third party application",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "403",
+              "description": "An error message indicating the caller is forbidden from accessing this service",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "An error message indicating the resource is not found",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "An error message indicating there was an unexpected server error",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            },
+            {
+              "code": "503",
+              "description": "An error message indicating server has a temporary problem responding",
+              "headers": [
+                "Schwab-Client-CorrelID"
+              ]
+            }
+          ],
+          "summary": "Get user preference information for the logged in user.",
+          "tag": "UserPreference"
+        }
+      ]
+    },
+    "market_data": {
+      "base_url": "https://api.schwabapi.com/marketdata/v1",
+      "endpoints": [
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "",
+          "method": "GET",
+          "operation_id": "getQuotes",
+          "parameters": [
+            {
+              "description": "Comma separated list of symbol(s) to look up a quote Example : MRAD,EATOF,EBIZ,AAPL,BAC,AAAHX,AAAIX,$DJI,$SPX,MVEN,SOBS,TOITF,CNSWF,AMZN 230317C01360000,DJX 231215C00290000,/ESH23,./ADUF23C0.55,AUD/CAD",
+              "in": "query",
+              "name": "symbols",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Request for subset of data by passing coma separated list of root nodes, possible root nodes are quote, fundamental, extended, reference, regular. Sending quote, fundamental in request will return quote and fundamental data in response. Dont send this attribute for full response. Default value : all",
+              "in": "query",
+              "name": "fields",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Include indicative symbol quotes for all ETF symbols in request. If ETF symbol ABC is in request and indicative=true API will return quotes for ABC and its corresponding indicative quote for $ABC.IV Available values : true, false Example : false",
+              "in": "query",
+              "name": "indicative",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "path": "/quotes",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "Quote Response",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Quotes by list of symbols.",
+          "tag": "Quotes"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "",
+          "method": "GET",
+          "operation_id": "getQuote",
+          "parameters": [
+            {
+              "description": "Symbol of instrument Example : TSLA",
+              "in": "path",
+              "name": "symbol_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Request for subset of data by passing coma separated list of root nodes, possible root nodes are quote, fundamental, extended, reference, regular. Sending quote, fundamental in request will return quote and fundamental data in response. Dont send this attribute for full response. Default value : all",
+              "in": "query",
+              "name": "fields",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/{symbol_id}/quotes",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "Quote Response",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Quote by single symbol.",
+          "tag": "Quotes"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get Option Chain including information on options contracts associated with each expiration.",
+          "method": "GET",
+          "operation_id": "getChain",
+          "parameters": [
+            {
+              "description": "Enter one symbol Example : AAPL",
+              "in": "query",
+              "name": "symbol",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Contract Type Available values : CALL, PUT, ALL",
+              "in": "query",
+              "name": "contractType",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "The Number of strikes to return above or below the at-the-money price",
+              "in": "query",
+              "name": "strikeCount",
+              "required": false,
+              "type": "integer"
+            },
+            {
+              "description": "Underlying quotes to be included",
+              "in": "query",
+              "name": "includeUnderlyingQuote",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "description": "OptionChain strategy. Default is SINGLE. ANALYTICAL allows the use of volatility, underlyingPrice, interestRate, and daysToExpiration params to calculate theoretical values. Available values : SINGLE, ANALYTICAL, COVERED, VERTICAL, CALENDAR, STRANGLE, STRADDLE, BUTTERFLY, CONDOR, DIAGONAL, COLLAR, ROLL",
+              "in": "query",
+              "name": "strategy",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Strike interval for spread strategy chains (see strategy param)",
+              "in": "query",
+              "name": "interval",
+              "required": false,
+              "type": "number ($double)"
+            },
+            {
+              "description": "Strike Price",
+              "in": "query",
+              "name": "strike",
+              "required": false,
+              "type": "number ($double)"
+            },
+            {
+              "description": "Range(ITM/NTM/OTM etc.)",
+              "in": "query",
+              "name": "range",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "From date(pattern: yyyy-MM-dd)",
+              "in": "query",
+              "name": "fromDate",
+              "required": false,
+              "type": "string ($date)"
+            },
+            {
+              "description": "To date (pattern: yyyy-MM-dd)",
+              "in": "query",
+              "name": "toDate",
+              "required": false,
+              "type": "string ($date)"
+            },
+            {
+              "description": "Volatility to use in calculations. Applies only to ANALYTICAL strategy chains (see strategy param)",
+              "in": "query",
+              "name": "volatility",
+              "required": false,
+              "type": "number ($double)"
+            },
+            {
+              "description": "Underlying price to use in calculations. Applies only to ANALYTICAL strategy chains (see strategy param)",
+              "in": "query",
+              "name": "underlyingPrice",
+              "required": false,
+              "type": "number ($double)"
+            },
+            {
+              "description": "Interest rate to use in calculations. Applies only to ANALYTICAL strategy chains (see strategy param)",
+              "in": "query",
+              "name": "interestRate",
+              "required": false,
+              "type": "number ($double)"
+            },
+            {
+              "description": "Days to expiration to use in calculations. Applies only to ANALYTICAL strategy chains (see strategy param)",
+              "in": "query",
+              "name": "daysToExpiration",
+              "required": false,
+              "type": "integer ($int32)"
+            },
+            {
+              "description": "Expiration month Available values : JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC, ALL",
+              "in": "query",
+              "name": "expMonth",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Option Type",
+              "in": "query",
+              "name": "optionType",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "Applicable only if its retail token, entitlement of client PP-PayingPro, NP-NonPro and PN-NonPayingPro Available values : PN, NP, PP",
+              "in": "query",
+              "name": "entitlement",
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "path": "/chains",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "The Chain for the symbol was returned successfully.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get option chain for an optionable Symbol",
+          "tag": "Option_Chains"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get Option Expiration (Series) information for an optionable symbol. Does not include individual options contracts for the underlying.",
+          "method": "GET",
+          "operation_id": "getExpirationChain",
+          "parameters": [
+            {
+              "description": "Enter one symbol Example : AAPL",
+              "in": "query",
+              "name": "symbol",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/expirationchain",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "The Expiration Chain for the symbol was returned successfully.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get option expiration chain for an optionable symbol",
+          "tag": "Option_Expiration_Chain"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get historical Open, High, Low, Close, and Volume for a given frequency (i.e. aggregation). Frequency available is dependent on periodType selected. The datetime format is in EPOCH milliseconds.",
+          "method": "GET",
+          "operation_id": "getPriceHistory",
+          "parameters": [
+            {
+              "description": "The Equity symbol used to look up price history Example : AAPL",
+              "in": "query",
+              "name": "symbol",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "The chart period being requested. Available values : day, month, year, ytd",
+              "in": "query",
+              "name": "periodType",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "The number of chart period types.; ; If the periodType is ; \u2022 day - valid values are 1, 2, 3, 4, 5, 10; \u2022 month - valid values are 1, 2, 3, 6; \u2022 year - valid values are 1, 2, 3, 5, 10, 15, 20; \u2022 ytd - valid values are 1; ; If the period is not specified and the periodType is; \u2022 day - default period is 10.; \u2022 month - default period is 1.; \u2022 year - default period is 1.; \u2022 ytd - default period is 1.;",
+              "in": "query",
+              "name": "period",
+              "required": false,
+              "type": "integer ($int32)"
+            },
+            {
+              "description": "The time frequencyType; ; If the periodType is ; \u2022 day - valid value is minute; \u2022 month - valid values are daily, weekly; \u2022 year - valid values are daily, weekly, monthly; \u2022 ytd - valid values are daily, weekly; ; If frequencyType is not specified, default value depends on the periodType; \u2022 day - defaulted to minute.; \u2022 month - defaulted to weekly.; \u2022 year - defaulted to monthly.; \u2022 ytd - defaulted to weekly.; Available values : minute, daily, weekly, monthly",
+              "in": "query",
+              "name": "frequencyType",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "The time frequency duration; ; If the frequencyType is ; \u2022 minute - valid values are 1, 5, 10, 15, 30; \u2022 daily - valid value is 1; \u2022 weekly - valid value is 1; \u2022 monthly - valid value is 1; ; If frequency is not specified, default value is 1 ;",
+              "in": "query",
+              "name": "frequency",
+              "required": false,
+              "type": "integer ($int32)"
+            },
+            {
+              "description": "The start date, Time in milliseconds since the UNIX epoch eg 1451624400000; If not specified startDate will be (endDate - period) excluding weekends and holidays.",
+              "in": "query",
+              "name": "startDate",
+              "required": false,
+              "type": "integer ($int64)"
+            },
+            {
+              "description": "The end date, Time in milliseconds since the UNIX epoch eg 1451624400000; If not specified, the endDate will default to the market close of previous business day.",
+              "in": "query",
+              "name": "endDate",
+              "required": false,
+              "type": "integer ($int64)"
+            },
+            {
+              "description": "Need extended hours data",
+              "in": "query",
+              "name": "needExtendedHoursData",
+              "required": false,
+              "type": "boolean"
+            },
+            {
+              "description": "Need previous close price/date",
+              "in": "query",
+              "name": "needPreviousClose",
+              "required": false,
+              "type": "boolean"
+            }
+          ],
+          "path": "/pricehistory",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "Get all candles for given date range",
+              "headers": []
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get PriceHistory for a single symbol and date ranges.",
+          "tag": "PriceHistory"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get a list of top 10 securities movement for a specific index.",
+          "method": "GET",
+          "operation_id": "getMovers",
+          "parameters": [
+            {
+              "description": "Index Symbol Available values : $DJI, $COMPX, $SPX, NYSE, NASDAQ, OTCBB, INDEX_ALL, EQUITY_ALL, OPTION_ALL, OPTION_PUT, OPTION_CALL Example : $DJI",
+              "in": "path",
+              "name": "symbol_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Sort by a particular attribute Available values : VOLUME, TRADES, PERCENT_CHANGE_UP, PERCENT_CHANGE_DOWN Example : VOLUME",
+              "in": "query",
+              "name": "sort",
+              "required": false,
+              "type": "string"
+            },
+            {
+              "description": "To return movers with the specified directions of up or down Available values : 0, 1, 5, 10, 30, 60 Default value : 0",
+              "in": "query",
+              "name": "frequency",
+              "required": false,
+              "type": "integer ($int32)"
+            }
+          ],
+          "path": "/movers/{symbol_id}",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "Analytics for the symbol was returned successfully.",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Movers for a specific index.",
+          "tag": "Movers"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get Market Hours for dates in the future across different markets.",
+          "method": "GET",
+          "operation_id": "getMarketHours",
+          "parameters": [
+            {
+              "description": "List of markets Available values : equity, option, bond, future, forex",
+              "in": "query",
+              "name": "markets",
+              "required": true,
+              "type": "array[string]"
+            },
+            {
+              "description": "Valid date range is from currentdate to 1 year from today. It will default to current day if not entered. Date format:YYYY-MM-DD",
+              "in": "query",
+              "name": "date",
+              "required": false,
+              "type": "string ($date)"
+            }
+          ],
+          "path": "/markets",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "OK",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Market Hours for different markets.",
+          "tag": "MarketHours"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get Market Hours for dates in the future for a single market.",
+          "method": "GET",
+          "operation_id": "getMarketHour",
+          "parameters": [
+            {
+              "description": "market id Available values : equity, option, bond, future, forex",
+              "in": "path",
+              "name": "market_id",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "Valid date range is from currentdate to 1 year from today. It will default to current day if not entered. Date format:YYYY-MM-DD",
+              "in": "query",
+              "name": "date",
+              "required": false,
+              "type": "string ($date)"
+            }
+          ],
+          "path": "/markets/{market_id}",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "OK",
+              "headers": [
+                "Schwab-Client-CorrelId"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Market Hours for a single market.",
+          "tag": "MarketHours"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get Instruments details by using different projections. Get more specific fundamental instrument data by using fundamental as the projection.",
+          "method": "GET",
+          "operation_id": "getInstruments",
+          "parameters": [
+            {
+              "description": "symbol of a security",
+              "in": "query",
+              "name": "symbol",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "description": "search by Available values : symbol-search, symbol-regex, desc-search, desc-regex, search, fundamental",
+              "in": "query",
+              "name": "projection",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/instruments",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "OK",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Instruments by symbols and projections.",
+          "tag": "Instruments"
+        },
+        {
+          "base_url": "https://api.schwabapi.com/marketdata/v1",
+          "description": "Get basic instrument details by cusip",
+          "method": "GET",
+          "operation_id": "getInstrumentsByCusip",
+          "parameters": [
+            {
+              "description": "cusip of a security",
+              "in": "path",
+              "name": "cusip_id",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "path": "/instruments/{cusip_id}",
+          "product": "market-data",
+          "request_body": null,
+          "responses": [
+            {
+              "code": "200",
+              "description": "OK",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "400",
+              "description": "Error response for generic client error 400",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "401",
+              "description": "Error response for 401 Unauthorized",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "404",
+              "description": "Error response for 404 Not Found",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            },
+            {
+              "code": "500",
+              "description": "Error response for 500 Internal Server Error",
+              "headers": [
+                "Schwab-Client-CorrelId",
+                "Schwab-Resource-Version"
+              ]
+            }
+          ],
+          "summary": "Get Instrument by specific cusip",
+          "tag": "Instruments"
+        }
+      ]
+    }
+  },
+  "regenerated_at": "2026-05-04T23:56:06-07:00",
+  "sources": [
+    {
+      "bytes": 1659974,
+      "key": "trading_specs",
+      "mtime": "2026-05-04T23:47:49-07:00",
+      "sha256": "1cd11f2999a087267c1b10d5995cc50eb76b87b31f790067517238f92d6f0765",
+      "source_file": "trading-production-specs.html"
+    },
+    {
+      "bytes": 1710498,
+      "key": "market_specs",
+      "mtime": "2026-05-04T23:49:02-07:00",
+      "sha256": "6a677de034cf140190715aefd69c189944521807ec69a361d113d086ba1a7ef1",
+      "source_file": "market-data-production-specs.html"
+    },
+    {
+      "bytes": 396995,
+      "key": "trading_docs",
+      "mtime": "2026-05-04T23:13:58-07:00",
+      "sha256": "fc2bb0b0f85918a060f95cf85d472128d2dd7ef001ef29038c4130c97f2b0fd3",
+      "source_file": "account-trading-production-docs.html"
+    },
+    {
+      "bytes": 459969,
+      "key": "market_docs",
+      "mtime": "2026-05-04T23:14:25-07:00",
+      "sha256": "fa0b8fc3f2dfa980ff1c9125e7f719177a9076b1555e9d5210e8236af0a8f76d",
+      "source_file": "market-data-production-docs.html"
+    }
+  ]
+}

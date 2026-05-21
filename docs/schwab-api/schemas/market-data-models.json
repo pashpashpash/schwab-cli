@@ -1,0 +1,2517 @@
+[
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string",
+        "field": "exchange"
+      },
+      {
+        "details": "string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "assetType"
+      },
+      {
+        "details": "string",
+        "field": "bondFactor"
+      },
+      {
+        "details": "string",
+        "field": "bondMultiplier"
+      },
+      {
+        "details": "number",
+        "field": "bondPrice"
+      },
+      {
+        "details": "string writeOnly: true Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "Bond"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "number ($double)",
+        "field": "high52"
+      },
+      {
+        "details": "number ($double)",
+        "field": "low52"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dividendAmount"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dividendYield"
+      },
+      {
+        "details": "string",
+        "field": "dividendDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "peRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "pegRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "pbRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "prRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "pcfRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "grossMarginTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "grossMarginMRQ"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netProfitMarginTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netProfitMarginMRQ"
+      },
+      {
+        "details": "number ($double)",
+        "field": "operatingMarginTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "operatingMarginMRQ"
+      },
+      {
+        "details": "number ($double)",
+        "field": "returnOnEquity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "returnOnAssets"
+      },
+      {
+        "details": "number ($double)",
+        "field": "returnOnInvestment"
+      },
+      {
+        "details": "number ($double)",
+        "field": "quickRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "currentRatio"
+      },
+      {
+        "details": "number ($double)",
+        "field": "interestCoverage"
+      },
+      {
+        "details": "number ($double)",
+        "field": "totalDebtToCapital"
+      },
+      {
+        "details": "number ($double)",
+        "field": "ltDebtToEquity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "totalDebtToEquity"
+      },
+      {
+        "details": "number ($double)",
+        "field": "epsTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "epsChangePercentTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "epsChangeYear"
+      },
+      {
+        "details": "number ($double)",
+        "field": "epsChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "revChangeYear"
+      },
+      {
+        "details": "number ($double)",
+        "field": "revChangeTTM"
+      },
+      {
+        "details": "number ($double)",
+        "field": "revChangeIn"
+      },
+      {
+        "details": "number ($double)",
+        "field": "sharesOutstanding"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marketCapFloat"
+      },
+      {
+        "details": "number ($double)",
+        "field": "marketCap"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bookValuePerShare"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortIntToFloat"
+      },
+      {
+        "details": "number ($double)",
+        "field": "shortIntDayToCover"
+      },
+      {
+        "details": "number ($double)",
+        "field": "divGrowthRate3Year"
+      },
+      {
+        "details": "number ($double)",
+        "field": "dividendPayAmount"
+      },
+      {
+        "details": "string",
+        "field": "dividendPayDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "beta"
+      },
+      {
+        "details": "number ($double)",
+        "field": "vol1DayAvg"
+      },
+      {
+        "details": "number ($double)",
+        "field": "vol10DayAvg"
+      },
+      {
+        "details": "number ($double)",
+        "field": "vol3MonthAvg"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "avg10DaysVolume"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "avg1DayVolume"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "avg3MonthVolume"
+      },
+      {
+        "details": "string",
+        "field": "declarationDate"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "dividendFreq"
+      },
+      {
+        "details": "number ($double)",
+        "field": "eps"
+      },
+      {
+        "details": "string",
+        "field": "corpactionDate"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "dtnVolume"
+      },
+      {
+        "details": "string",
+        "field": "nextDividendPayDate"
+      },
+      {
+        "details": "string",
+        "field": "nextDividendDate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "fundLeverageFactor"
+      },
+      {
+        "details": "string",
+        "field": "fundStrategy"
+      }
+    ],
+    "name": "FundamentalInst"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string",
+        "field": "exchange"
+      },
+      {
+        "details": "string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "assetType"
+      },
+      {
+        "details": "string writeOnly: true Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "Instrument"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "cusip"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string",
+        "field": "exchange"
+      },
+      {
+        "details": "string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "assetType"
+      },
+      {
+        "details": "string",
+        "field": "bondFactor"
+      },
+      {
+        "details": "string",
+        "field": "bondMultiplier"
+      },
+      {
+        "details": "number",
+        "field": "bondPrice"
+      },
+      {
+        "details": "#/components/schemas/FundamentalInst FundamentalInst { symbol string high52 number ($double) low52 number ($double) dividendAmount number ($double) dividendYield number ($double) dividendDate string peRatio number ($double) pegRatio number ($double) pbRatio number ($double) prRatio number ($double) pcfRatio number ($double) grossMarginTTM number ($double) grossMarginMRQ number ($double) netProfitMarginTTM number ($double) netProfitMarginMRQ number ($double) operatingMarginTTM number ($double) operatingMarginMRQ number ($double) returnOnEquity number ($double) returnOnAssets number ($double) returnOnInvestment number ($double) quickRatio number ($double) currentRatio number ($double) interestCoverage number ($double) totalDebtToCapital number ($double) ltDebtToEquity number ($double) totalDebtToEquity number ($double) epsTTM number ($double) epsChangePercentTTM number ($double) epsChangeYear number ($double) epsChange number ($double) revChangeYear number ($double) revChangeTTM number ($double) revChangeIn number ($double) sharesOutstanding number ($double) marketCapFloat number ($double) marketCap number ($double) bookValuePerShare number ($double) shortIntToFloat number ($double) shortIntDayToCover number ($double) divGrowthRate3Year number ($double) dividendPayAmount number ($double) dividendPayDate string beta number ($double) vol1DayAvg number ($double) vol10DayAvg number ($double) vol3MonthAvg number ($double) avg10DaysVolume integer ($int64) avg1DayVolume integer ($int64) avg3MonthVolume integer ($int64) declarationDate string dividendFreq integer ($int32) eps number ($double) corpactionDate string dtnVolume integer ($int64) nextDividendPayDate string nextDividendDate string fundLeverageFactor number ($double) fundStrategy string }",
+        "field": "fundamental"
+      },
+      {
+        "details": "#/components/schemas/Instrument Instrument { cusip string symbol string description string exchange string assetType string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ] type string writeOnly: true Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ] }",
+        "field": "instrumentInfo"
+      },
+      {
+        "details": "#/components/schemas/Bond Bond { cusip string symbol string description string exchange string assetType string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ] bondFactor string bondMultiplier string bondPrice number type string writeOnly: true Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ] }",
+        "field": "bondInstrumentInfo"
+      },
+      {
+        "details": "string writeOnly: true Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "type"
+      }
+    ],
+    "name": "InstrumentResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "date"
+      },
+      {
+        "details": "string Enum: [ BOND, EQUITY, ETF, EXTENDED, FOREX, FUTURE, FUTURE_OPTION, FUNDAMENTAL, INDEX, INDICATOR, MUTUAL_FUND, OPTION, UNKNOWN ]",
+        "field": "marketType"
+      },
+      {
+        "details": "string",
+        "field": "exchange"
+      },
+      {
+        "details": "string",
+        "field": "category"
+      },
+      {
+        "details": "string",
+        "field": "product"
+      },
+      {
+        "details": "string",
+        "field": "productName"
+      },
+      {
+        "details": "boolean",
+        "field": "isOpen"
+      },
+      {
+        "details": "{ < * >: [] #/components/schemas/Interval Interval { start string end string } }",
+        "field": "sessionHours"
+      }
+    ],
+    "name": "Hours"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "start"
+      },
+      {
+        "details": "string",
+        "field": "end"
+      }
+    ],
+    "name": "Interval"
+  },
+  {
+    "fields": [
+      {
+        "details": "Security info of most moved with in an index",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) percent or value changed, by default its percent changed",
+        "field": "change"
+      },
+      {
+        "details": "string Name of security",
+        "field": "description"
+      },
+      {
+        "details": "string Enum: [ up, down ]",
+        "field": "direction"
+      },
+      {
+        "details": "number ($double) what was last quoted price",
+        "field": "last"
+      },
+      {
+        "details": "string schwab security symbol",
+        "field": "symbol"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "totalVolume"
+      }
+    ],
+    "name": "Screener"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "close"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "datetime"
+      },
+      {
+        "details": "string ($yyyy-MM-dd)",
+        "field": "datetimeISO8601"
+      },
+      {
+        "details": "number ($double)",
+        "field": "high"
+      },
+      {
+        "details": "number ($double)",
+        "field": "low"
+      },
+      {
+        "details": "number ($double)",
+        "field": "open"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "volume"
+      }
+    ],
+    "name": "Candle"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/Candle Candle { close number ($double) datetime integer ($int64) datetimeISO8601 string ($yyyy-MM-dd) high number ($double) low number ($double) open number ($double) volume integer ($int64) }",
+        "field": "candles"
+      },
+      {
+        "details": "boolean",
+        "field": "empty"
+      },
+      {
+        "details": "number ($double)",
+        "field": "previousClose"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "previousCloseDate"
+      },
+      {
+        "details": "string ($yyyy-MM-dd)",
+        "field": "previousCloseDateISO8601"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      }
+    ],
+    "name": "CandleList"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Equity security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "EquityAssetSubType string nullable: true Asset Sub Type (only there if applicable) Enum: [ COE, PRF, ADR, GDR, CEF, ETF, ETN, UIT, WAR, RGT, ]",
+        "field": "assetSubType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "QuoteType string nullable: true NBBO - realtime, NFL - Non-fee liable quote. Enum: [ NBBO, NFL, ]",
+        "field": "quoteType"
+      },
+      {
+        "details": "#/components/schemas/ExtendedMarket ExtendedMarket { description: Quote data for extended hours askPrice number ($double) example: 124.85 Extended market ask price askSize integer ($int32) example: 51771 Extended market ask size bidPrice number ($double) example: 124.85 Extended market bid price bidSize integer ($int32) example: 51771 Extended market bid size lastPrice number ($double) example: 124.85 Extended market last price lastSize integer ($int32) example: 51771 Regular market last size mark number ($double) example: 1.1246 mark price quoteTime integer ($int64) example: 1621368000400 Extended market quote time in milliseconds since Epoch totalVolume number ($int64) example: 12345 Total volume tradeTime integer ($int64) example: 1621368000400 Extended market trade time in milliseconds since Epoch }",
+        "field": "extended"
+      },
+      {
+        "details": "#/components/schemas/Fundamental Fundamental { description: Fundamentals of a security avg10DaysVolume number ($double) Average 10 day volume avg1YearVolume number ($double) Average 1 day volume declarationDate string ($date-time) example: 2021-04-28T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Declaration date in yyyy-mm-ddThh:mm:ssZ divAmount number ($double) example: 0.88 Dividend Amount divExDate string ($yyyy-MM-dd'T'HH:mm:ssZ) example: 2021-05-07T00:00:00Z Dividend date in yyyy-mm-ddThh:mm:ssZ divFreq DivFreq integer nullable: true Dividend frequency 1 \u2013 once a year or annually 2 \u2013 2x a year or semi-annualy 3 - 3x a year (ex. ARCO, EBRPF) 4 \u2013 4x a year or quarterly 6 - 6x per yr or every other month 11 \u2013 11x a year (ex. FBND, FCOR) 12 \u2013 12x a year or monthly Enum: [ 1, 2, 3, 4, 6, 11, 12, ] divPayAmount number ($double) example: 0.22 Dividend Pay Amount divPayDate string ($date-time) example: 2021-05-13T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Dividend pay date in yyyy-mm-ddThh:mm:ssZ divYield number ($double) example: 0.7 Dividend yield eps number ($double) example: 4.45645 Earnings per Share fundLeverageFactor number ($double) example: -1 Fund Leverage Factor + > 0 <- fundStrategy FundStrategy string nullable: true FundStrategy \"A\" - Active \"L\" - Leveraged \"P\" - Passive \"Q\" - Quantitative \"S\" - Short Enum: [ A, L, P, Q, S, ] nextDivExDate string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend date nextDivPayDate string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend pay date peRatio number ($double) example: 28.599 P/E Ratio }",
+        "field": "fundamental"
+      },
+      {
+        "details": "#/components/schemas/QuoteEquity QuoteEquity { description: Quote data of Equity security 52WeekHigh number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks 52WeekLow number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks askMICId string example: XNYS ask MIC code askPrice number ($double) example: 124.63 Current Best Ask Price askSize integer ($int32) example: 700 Number of shares for ask askTime integer ($int64) example: 1621376892336 Last ask time in milliseconds since Epoch bidMICId string example: XNYS bid MIC code bidPrice number ($double) example: 124.6 Current Best Bid Price bidSize integer ($int32) example: 300 Number of shares for bid bidTime integer ($int64) example: 1621376892336 Last bid time in milliseconds since Epoch closePrice number ($double) example: 126.27 Previous day's closing price highPrice number ($double) example: 126.99 Day's high trade price lastMICId string example: XNYS Last MIC Code lastPrice number ($double) example: 122.3 lastSize integer ($int32) example: 100 Number of shares traded with last trade lowPrice number ($double) Day's low trade price mark number ($double) example: 52.93 Mark price markChange number ($double) example: -0.01 Mark Price change markPercentChange number ($double) example: -0.0189 Mark Price percent change netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change openPrice number ($double) example: 52.8 Price at market open quoteTime integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch securityStatus string example: Normal Status of security totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch volatility number ($double) example: 0.0094 Option Risk/Volatility Measurement }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceEquity ReferenceEquity { description: Reference data of Equity security cusip string example: A23456789 CUSIP of Instrument description string example: Apple Inc. - Common Stock Description of Instrument exchange string example: q Exchange Code exchangeName string Exchange Name fsiDesc string maxLength: 50 FSI Desc htbQuantity integer ($int32) example: 100 Hard to borrow quantity. htbRate number ($double) example: 4.5 Hard to borrow rate. isHardToBorrow boolean example: false is Hard to borrow security. isShortable boolean example: false is shortable security. otcMarketTier string maxLength: 10 OTC Market Tier }",
+        "field": "reference"
+      },
+      {
+        "details": "#/components/schemas/RegularMarket RegularMarket { description: Market info of security regularMarketLastPrice number ($double) example: 124.85 Regular market last price regularMarketLastSize integer ($int32) example: 51771 Regular market last size regularMarketNetChange number ($double) example: -1.42 Regular market net change regularMarketPercentChange number ($double) example: -1.1246 Regular market percent change regularMarketTradeTime integer ($int64) example: 1621368000400 Regular market trade time in milliseconds since Epoch }",
+        "field": "regular"
+      }
+    ],
+    "name": "EquityResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Partial or Custom errors per request",
+        "field": "description:"
+      },
+      {
+        "details": "[] list of invalid cusips from request string",
+        "field": "invalidCusips"
+      },
+      {
+        "details": "[] list of invalid SSIDs from request integer ($int64)",
+        "field": "invalidSSIDs"
+      },
+      {
+        "details": "[] list of invalid symbols from request string",
+        "field": "invalidSymbols"
+      }
+    ],
+    "name": "QuoteError"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data for extended hours",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 124.85 Extended market ask price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 51771 Extended market ask size",
+        "field": "askSize"
+      },
+      {
+        "details": "number ($double) example: 124.85 Extended market bid price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 51771 Extended market bid size",
+        "field": "bidSize"
+      },
+      {
+        "details": "number ($double) example: 124.85 Extended market last price",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 51771 Regular market last size",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) example: 1.1246 mark price",
+        "field": "mark"
+      },
+      {
+        "details": "integer ($int64) example: 1621368000400 Extended market quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "number ($int64) example: 12345 Total volume",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621368000400 Extended market trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "ExtendedMarket"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Forex security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/QuoteForex QuoteForex { description: Quote data of Forex security 52WeekHigh number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks 52WeekLow number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks askPrice number ($double) example: 124.63 Current Best Ask Price askSize integer ($int32) example: 700 Number of shares for ask bidPrice number ($double) example: 124.6 Current Best Bid Price bidSize integer ($int32) example: 300 Number of shares for bid closePrice number ($double) example: 126.27 Previous day's closing price highPrice number ($double) example: 126.99 Day's high trade price lastPrice number ($double) example: 122.3 lastSize integer ($int32) example: 100 Number of shares traded with last trade lowPrice number ($double) example: 52.74 Day's low trade price mark number ($double) example: 52.93 Mark price netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change openPrice number ($double) example: 52.8 Price at market open quoteTime integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch securityStatus string example: Normal Status of security tick number ($double) example: 0 Tick Price tickAmount number ($double) example: 0 Tick Amount totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceForex ReferenceForex { description: Reference data of Forex security description string example: Euro/USDollar Spot Description of Instrument exchange string example: q Exchange Code exchangeName string Exchange Name isTradable boolean example: true is FOREX tradable marketMaker string Market marker product string example: null Product name tradingHours string Trading hours }",
+        "field": "reference"
+      }
+    ],
+    "name": "ForexResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Fundamentals of a security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) Average 10 day volume",
+        "field": "avg10DaysVolume"
+      },
+      {
+        "details": "number ($double) Average 1 day volume",
+        "field": "avg1YearVolume"
+      },
+      {
+        "details": "string ($date-time) example: 2021-04-28T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Declaration date in yyyy-mm-ddThh:mm:ssZ",
+        "field": "declarationDate"
+      },
+      {
+        "details": "number ($double) example: 0.88 Dividend Amount",
+        "field": "divAmount"
+      },
+      {
+        "details": "string ($yyyy-MM-dd'T'HH:mm:ssZ) example: 2021-05-07T00:00:00Z Dividend date in yyyy-mm-ddThh:mm:ssZ",
+        "field": "divExDate"
+      },
+      {
+        "details": "DivFreq integer nullable: true Dividend frequency 1 \u2013 once a year or annually 2 \u2013 2x a year or semi-annualy 3 - 3x a year (ex. ARCO, EBRPF) 4 \u2013 4x a year or quarterly 6 - 6x per yr or every other month 11 \u2013 11x a year (ex. FBND, FCOR) 12 \u2013 12x a year or monthly Enum: [ 1, 2, 3, 4, 6, 11, 12, ]",
+        "field": "divFreq"
+      },
+      {
+        "details": "number ($double) example: 0.22 Dividend Pay Amount",
+        "field": "divPayAmount"
+      },
+      {
+        "details": "string ($date-time) example: 2021-05-13T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Dividend pay date in yyyy-mm-ddThh:mm:ssZ",
+        "field": "divPayDate"
+      },
+      {
+        "details": "number ($double) example: 0.7 Dividend yield",
+        "field": "divYield"
+      },
+      {
+        "details": "number ($double) example: 4.45645 Earnings per Share",
+        "field": "eps"
+      },
+      {
+        "details": "number ($double) example: -1 Fund Leverage Factor + > 0 <-",
+        "field": "fundLeverageFactor"
+      },
+      {
+        "details": "FundStrategy string nullable: true FundStrategy \"A\" - Active \"L\" - Leveraged \"P\" - Passive \"Q\" - Quantitative \"S\" - Short Enum: [ A, L, P, Q, S, ]",
+        "field": "fundStrategy"
+      },
+      {
+        "details": "string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend date",
+        "field": "nextDivExDate"
+      },
+      {
+        "details": "string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend pay date",
+        "field": "nextDivPayDate"
+      },
+      {
+        "details": "number ($double) example: 28.599 P/E Ratio",
+        "field": "peRatio"
+      }
+    ],
+    "name": "Fundamental"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Future Option security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/QuoteFutureOption QuoteFutureOption { description: Quote data of Option security askMICId string example: XNYS ask MIC code askPrice number ($double) example: 124.63 Current Best Ask Price askSize integer ($int32) example: 700 Number of shares for ask bidMICId string example: XNYS bid MIC code bidPrice number ($double) example: 124.6 Current Best Bid Price bidSize integer ($int32) example: 300 Number of shares for bid closePrice number ($double) example: 126.27 Previous day's closing price highPrice number ($double) example: 126.99 Day's high trade price lastMICId string example: XNYS Last MIC Code lastPrice number ($double) example: 122.3 lastSize integer ($int32) example: 100 Number of shares traded with last trade lowPrice number ($double) example: 52.74 Day's low trade price mark number ($double) example: 52.93 Mark price markChange number ($double) example: -0.04 Mark Price change netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change openInterest integer ($int32) example: 317 Open Interest openPrice number ($double) example: 52.8 Price at market open quoteTime integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch securityStatus string example: Normal Status of security settlemetPrice number ($double) example: 52.8 Price at market open tick number ($double) example: 0 Tick Price tickAmount number ($double) example: 0 Tick Amount totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceFutureOption ReferenceFutureOption { description: Reference data of Future Option security contractType ContractType string Indicates call or put Enum: [ P, C ] description string example: AMZN Aug 20 2021 2300 Put Description of Instrument exchange string example: q Exchange Code exchangeName string Exchange Name multiplier number ($double) example: 100 Option multiplier expirationDate integer ($int64) date of expiration in long expirationStyle string Style of expiration strikePrice number ($double) example: 2300 Strike Price underlying string example: AMZN Aug 20 2021 2300 Put A company, index or fund name }",
+        "field": "reference"
+      }
+    ],
+    "name": "FutureOptionResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Future security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/QuoteFuture QuoteFuture { description: Quote data of Future security askMICId string example: XNYS ask MIC code askPrice number ($double) example: 4083.25 Current Best Ask Price askSize integer ($int32) example: 36 Number of shares for ask askTime integer ($int64) example: 1621376892336 Last ask time in milliseconds since Epoch bidMICId string example: XNYS bid MIC code bidPrice number ($double) example: 4083 Current Best Bid Price bidSize integer ($int32) example: 18 Number of shares for bid bidTime integer ($int64) example: 1621376892336 Last bid time in milliseconds since Epoch closePrice number ($double) example: 4123 Previous day's closing price futurePercentChange number ($double) example: -0.0756 Net Percentage Change highPrice number ($double) example: 4123 Day's high trade price lastMICId string example: XNYS Last MIC Code lastPrice number ($double) example: 4083 lastSize integer ($int32) example: 7 Number of shares traded with last trade lowPrice number ($double) example: 4075.5 Day's low trade price mark number ($double) example: 4083 Mark price netChange number ($double) example: -40 Current Last-Prev Close openInterest integer ($int32) example: 2517139 Open interest openPrice number ($double) example: 4114 Price at market open quoteTime integer ($int64) example: 1621427004585 Last quote time in milliseconds since Epoch quotedInSession boolean example: false quoted during trading session securityStatus string example: Normal Status of security settleTime integer ($int64) example: 1621376892336 settlement time in milliseconds since Epoch tick number ($double) example: 0.25 Tick Price tickAmount number ($double) example: 12.5 Tick Amount totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceFuture ReferenceFuture { description: Reference data of Future security description string example: E-mini S&P 500 Index Futures,Jun-2021,ETH Description of Instrument exchange string example: q Exchange Code exchangeName string Exchange Name futureActiveSymbol string example: /ESM21 Active symbol futureExpirationDate number ($int64) example: 1623988800000 Future expiration date in milliseconds since epoch futureIsActive boolean example: true Future is active futureMultiplier number ($double) example: 50 Future multiplier futurePriceFormat string example: D,D Price format futureSettlementPrice number ($double) example: 4123 Future Settlement Price futureTradingHours string example: GLBX(de=1640;0=-1700151515301600;1=r-17001515r15301600d-15551640;7=d-16401555) Trading Hours product string example: /ES Futures product symbol }",
+        "field": "reference"
+      }
+    ],
+    "name": "FutureResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Index security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/QuoteIndex QuoteIndex { description: Quote data of Index security 52WeekHigh number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks 52WeekLow number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks closePrice number ($double) example: 126.27 Previous day's closing price highPrice number ($double) example: 126.99 Day's high trade price lastPrice number ($double) example: 122.3 lowPrice number ($double) example: 52.74 Day's low trade price netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change openPrice number ($double) example: 52.8 Price at market open securityStatus string example: Normal Status of security totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceIndex ReferenceIndex { description: Reference data of Index security description string example: DOW JONES 30 INDUSTRIALS Description of Instrument exchange string example: q Exchange Code exchangeName string Exchange Name }",
+        "field": "reference"
+      }
+    ],
+    "name": "IndexResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of MutualFund security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "MutualFundAssetSubType string nullable: true Asset Sub Type (only there if applicable) Enum: [ OEF, CEF, MMF, ]",
+        "field": "assetSubType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/Fundamental Fundamental { description: Fundamentals of a security avg10DaysVolume number ($double) Average 10 day volume avg1YearVolume number ($double) Average 1 day volume declarationDate string ($date-time) example: 2021-04-28T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Declaration date in yyyy-mm-ddThh:mm:ssZ divAmount number ($double) example: 0.88 Dividend Amount divExDate string ($yyyy-MM-dd'T'HH:mm:ssZ) example: 2021-05-07T00:00:00Z Dividend date in yyyy-mm-ddThh:mm:ssZ divFreq DivFreq integer nullable: true Dividend frequency 1 \u2013 once a year or annually 2 \u2013 2x a year or semi-annualy 3 - 3x a year (ex. ARCO, EBRPF) 4 \u2013 4x a year or quarterly 6 - 6x per yr or every other month 11 \u2013 11x a year (ex. FBND, FCOR) 12 \u2013 12x a year or monthly Enum: [ 1, 2, 3, 4, 6, 11, 12, ] divPayAmount number ($double) example: 0.22 Dividend Pay Amount divPayDate string ($date-time) example: 2021-05-13T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Dividend pay date in yyyy-mm-ddThh:mm:ssZ divYield number ($double) example: 0.7 Dividend yield eps number ($double) example: 4.45645 Earnings per Share fundLeverageFactor number ($double) example: -1 Fund Leverage Factor + > 0 <- fundStrategy FundStrategy string nullable: true FundStrategy \"A\" - Active \"L\" - Leveraged \"P\" - Passive \"Q\" - Quantitative \"S\" - Short Enum: [ A, L, P, Q, S, ] nextDivExDate string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend date nextDivPayDate string ($date-time) example: 2021-02-12T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Next Dividend pay date peRatio number ($double) example: 28.599 P/E Ratio }",
+        "field": "fundamental"
+      },
+      {
+        "details": "#/components/schemas/QuoteMutualFund QuoteMutualFund { description: Quote data of Mutual Fund security 52WeekHigh number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks 52WeekLow number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks closePrice number ($double) example: 126.27 Previous day's closing price nAV number ($double) example: 126.99 Net Asset Value netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change securityStatus string example: Normal Status of security totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch }",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceMutualFund ReferenceMutualFund { description: Reference data of MutualFund security cusip string example: A23456789 CUSIP of Instrument description string example: Apple Inc. - Common Stock Description of Instrument exchange string default: m Exchange Code exchangeName string default: MUTUAL_FUND Exchange Name }",
+        "field": "reference"
+      }
+    ],
+    "name": "MutualFundResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote info of Option security",
+        "field": "description:"
+      },
+      {
+        "details": "AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ]",
+        "field": "assetMainType"
+      },
+      {
+        "details": "integer ($int64) example: 1234567890 SSID of instrument",
+        "field": "ssid"
+      },
+      {
+        "details": "string example: AAPL Symbol of instrument",
+        "field": "symbol"
+      },
+      {
+        "details": "boolean example: true is quote realtime",
+        "field": "realtime"
+      },
+      {
+        "details": "#/components/schemas/QuoteOption QuoteOption { description: Quote data of Option security 52WeekHigh number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks 52WeekLow number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks askPrice number ($double) example: 124.63 Current Best Ask Price askSize integer ($int32) example: 700 Number of shares for ask bidPrice number ($double) example: 124.6 Current Best Bid Price bidSize integer ($int32) example: 300 Number of shares for bid closePrice number ($double) example: 126.27 Previous day's closing price delta number ($double) example: -0.0407 Delta Value gamma number ($double) example: 0.0001 Gamma Value highPrice number ($double) example: 126.99 Day's high trade price indAskPrice number ($double) example: 126.99 Indicative Ask Price applicable only for Indicative Option Symbols indBidPrice number ($double) example: 126.99 Indicative Bid Price applicable only for Indicative Option Symbols indQuoteTime integer ($int64) example: 126.99 Indicative Quote Time in milliseconds since Epoch applicable only for Indicative Option Symbols impliedYield number ($double) example: -0.0067 Implied Yield lastPrice number ($double) example: 122.3 lastSize integer ($int32) example: 100 Number of shares traded with last trade lowPrice number ($double) example: 52.74 Day's low trade price mark number ($double) example: 52.93 Mark price markChange number ($double) example: -0.01 Mark Price change markPercentChange number ($double) example: -0.0189 Mark Price percent change moneyIntrinsicValue number ($double) example: -947.96 Money Intrinsic Value netChange number ($double) example: -0.04 Current Last-Prev Close netPercentChange number ($double) example: -0.0756 Net Percentage Change openInterest number ($double) example: 317 Open Interest openPrice number ($double) example: 52.8 Price at market open quoteTime integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch rho number ($double) example: -0.3732 Rho Value securityStatus string example: Normal Status of security theoreticalOptionValue number ($double) example: 12.275 Theoretical option Value theta number ($double) example: -0.315 Theta Value timeValue number ($double) example: 12.22 Time Value totalVolume integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours. tradeTime integer ($int64) example: 1621376731304 Last trade time in milli\u2026",
+        "field": "quote"
+      },
+      {
+        "details": "#/components/schemas/ReferenceOption ReferenceOption { description: Reference data of Option security contractType ContractType string Indicates call or put Enum: [ P, C ] cusip string example: 0AMZN.TK12300000 CUSIP of Instrument daysToExpiration integer ($int32) example: 94 Days to Expiration deliverables string example: $6024.37 cash in lieu of shares, 212 shares of AZN Unit of trade description string example: AMZN Aug 20 2021 2300 Put Description of Instrument exchange string default: o Exchange Code exchangeName string Exchange Name exerciseType ExerciseType string option contract exercise type America or European Enum: [ A, E ] expirationDay integer ($int32) example: 20 maximum: 31 minimum: 1 Expiration Day expirationMonth integer ($int32) example: 8 maximum: 12 minimum: 1 Expiration Month expirationType ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ] expirationYear integer ($int32) example: 2021 Expiration Year isPennyPilot boolean example: true Is this contract part of the Penny Pilot program lastTradingDay integer ($int64) example: 1629504000000 milliseconds since epoch multiplier number ($double) example: 100 Option multiplier settlementType SettlementType string option contract settlement type AM or PM Enum: [ A, P ] strikePrice number ($double) example: 2300 Strike Price underlying string example: AMZN Aug 20 2021 2300 Put A company, index or fund name }",
+        "field": "reference"
+      }
+    ],
+    "name": "OptionResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Equity security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekHigh"
+      },
+      {
+        "details": "number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekLow"
+      },
+      {
+        "details": "string example: XNYS ask MIC code",
+        "field": "askMICId"
+      },
+      {
+        "details": "number ($double) example: 124.63 Current Best Ask Price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 700 Number of shares for ask",
+        "field": "askSize"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last ask time in milliseconds since Epoch",
+        "field": "askTime"
+      },
+      {
+        "details": "string example: XNYS bid MIC code",
+        "field": "bidMICId"
+      },
+      {
+        "details": "number ($double) example: 124.6 Current Best Bid Price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 300 Number of shares for bid",
+        "field": "bidSize"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last bid time in milliseconds since Epoch",
+        "field": "bidTime"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "string example: XNYS Last MIC Code",
+        "field": "lastMICId"
+      },
+      {
+        "details": "number ($double) example: 122.3",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 100 Number of shares traded with last trade",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: 52.93 Mark price",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double) example: -0.01 Mark Price change",
+        "field": "markChange"
+      },
+      {
+        "details": "number ($double) example: -0.0189 Mark Price percent change",
+        "field": "markPercentChange"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      },
+      {
+        "details": "number ($double) example: 0.0094 Option Risk/Volatility Measurement",
+        "field": "volatility"
+      }
+    ],
+    "name": "QuoteEquity"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Forex security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekHigh"
+      },
+      {
+        "details": "number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekLow"
+      },
+      {
+        "details": "number ($double) example: 124.63 Current Best Ask Price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 700 Number of shares for ask",
+        "field": "askSize"
+      },
+      {
+        "details": "number ($double) example: 124.6 Current Best Bid Price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 300 Number of shares for bid",
+        "field": "bidSize"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "number ($double) example: 122.3",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 100 Number of shares traded with last trade",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) example: 52.74 Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: 52.93 Mark price",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "number ($double) example: 0 Tick Price",
+        "field": "tick"
+      },
+      {
+        "details": "number ($double) example: 0 Tick Amount",
+        "field": "tickAmount"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "QuoteForex"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Future security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: XNYS ask MIC code",
+        "field": "askMICId"
+      },
+      {
+        "details": "number ($double) example: 4083.25 Current Best Ask Price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 36 Number of shares for ask",
+        "field": "askSize"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last ask time in milliseconds since Epoch",
+        "field": "askTime"
+      },
+      {
+        "details": "string example: XNYS bid MIC code",
+        "field": "bidMICId"
+      },
+      {
+        "details": "number ($double) example: 4083 Current Best Bid Price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 18 Number of shares for bid",
+        "field": "bidSize"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last bid time in milliseconds since Epoch",
+        "field": "bidTime"
+      },
+      {
+        "details": "number ($double) example: 4123 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "futurePercentChange"
+      },
+      {
+        "details": "number ($double) example: 4123 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "string example: XNYS Last MIC Code",
+        "field": "lastMICId"
+      },
+      {
+        "details": "number ($double) example: 4083",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 7 Number of shares traded with last trade",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) example: 4075.5 Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: 4083 Mark price",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double) example: -40 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "integer ($int32) example: 2517139 Open interest",
+        "field": "openInterest"
+      },
+      {
+        "details": "number ($double) example: 4114 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "integer ($int64) example: 1621427004585 Last quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "boolean example: false quoted during trading session",
+        "field": "quotedInSession"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 settlement time in milliseconds since Epoch",
+        "field": "settleTime"
+      },
+      {
+        "details": "number ($double) example: 0.25 Tick Price",
+        "field": "tick"
+      },
+      {
+        "details": "number ($double) example: 12.5 Tick Amount",
+        "field": "tickAmount"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "QuoteFuture"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Option security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: XNYS ask MIC code",
+        "field": "askMICId"
+      },
+      {
+        "details": "number ($double) example: 124.63 Current Best Ask Price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 700 Number of shares for ask",
+        "field": "askSize"
+      },
+      {
+        "details": "string example: XNYS bid MIC code",
+        "field": "bidMICId"
+      },
+      {
+        "details": "number ($double) example: 124.6 Current Best Bid Price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 300 Number of shares for bid",
+        "field": "bidSize"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "string example: XNYS Last MIC Code",
+        "field": "lastMICId"
+      },
+      {
+        "details": "number ($double) example: 122.3",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 100 Number of shares traded with last trade",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) example: 52.74 Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: 52.93 Mark price",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double) example: -0.04 Mark Price change",
+        "field": "markChange"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "integer ($int32) example: 317 Open Interest",
+        "field": "openInterest"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "settlemetPrice"
+      },
+      {
+        "details": "number ($double) example: 0 Tick Price",
+        "field": "tick"
+      },
+      {
+        "details": "number ($double) example: 0 Tick Amount",
+        "field": "tickAmount"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "QuoteFutureOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Index security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekHigh"
+      },
+      {
+        "details": "number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekLow"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "number ($double) example: 122.3",
+        "field": "lastPrice"
+      },
+      {
+        "details": "number ($double) example: 52.74 Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "QuoteIndex"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Mutual Fund security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekHigh"
+      },
+      {
+        "details": "number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekLow"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Net Asset Value",
+        "field": "nAV"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "QuoteMutualFund"
+  },
+  {
+    "fields": [
+      {
+        "details": "Quote data of Option security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 145.09 Higest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekHigh"
+      },
+      {
+        "details": "number ($double) example: 77.581 Lowest price traded in the past 12 months, or 52 weeks",
+        "field": "52WeekLow"
+      },
+      {
+        "details": "number ($double) example: 124.63 Current Best Ask Price",
+        "field": "askPrice"
+      },
+      {
+        "details": "integer ($int32) example: 700 Number of shares for ask",
+        "field": "askSize"
+      },
+      {
+        "details": "number ($double) example: 124.6 Current Best Bid Price",
+        "field": "bidPrice"
+      },
+      {
+        "details": "integer ($int32) example: 300 Number of shares for bid",
+        "field": "bidSize"
+      },
+      {
+        "details": "number ($double) example: 126.27 Previous day's closing price",
+        "field": "closePrice"
+      },
+      {
+        "details": "number ($double) example: -0.0407 Delta Value",
+        "field": "delta"
+      },
+      {
+        "details": "number ($double) example: 0.0001 Gamma Value",
+        "field": "gamma"
+      },
+      {
+        "details": "number ($double) example: 126.99 Day's high trade price",
+        "field": "highPrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Indicative Ask Price applicable only for Indicative Option Symbols",
+        "field": "indAskPrice"
+      },
+      {
+        "details": "number ($double) example: 126.99 Indicative Bid Price applicable only for Indicative Option Symbols",
+        "field": "indBidPrice"
+      },
+      {
+        "details": "integer ($int64) example: 126.99 Indicative Quote Time in milliseconds since Epoch applicable only for Indicative Option Symbols",
+        "field": "indQuoteTime"
+      },
+      {
+        "details": "number ($double) example: -0.0067 Implied Yield",
+        "field": "impliedYield"
+      },
+      {
+        "details": "number ($double) example: 122.3",
+        "field": "lastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 100 Number of shares traded with last trade",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double) example: 52.74 Day's low trade price",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double) example: 52.93 Mark price",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double) example: -0.01 Mark Price change",
+        "field": "markChange"
+      },
+      {
+        "details": "number ($double) example: -0.0189 Mark Price percent change",
+        "field": "markPercentChange"
+      },
+      {
+        "details": "number ($double) example: -947.96 Money Intrinsic Value",
+        "field": "moneyIntrinsicValue"
+      },
+      {
+        "details": "number ($double) example: -0.04 Current Last-Prev Close",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double) example: -0.0756 Net Percentage Change",
+        "field": "netPercentChange"
+      },
+      {
+        "details": "number ($double) example: 317 Open Interest",
+        "field": "openInterest"
+      },
+      {
+        "details": "number ($double) example: 52.8 Price at market open",
+        "field": "openPrice"
+      },
+      {
+        "details": "integer ($int64) example: 1621376892336 Last quote time in milliseconds since Epoch",
+        "field": "quoteTime"
+      },
+      {
+        "details": "number ($double) example: -0.3732 Rho Value",
+        "field": "rho"
+      },
+      {
+        "details": "string example: Normal Status of security",
+        "field": "securityStatus"
+      },
+      {
+        "details": "number ($double) example: 12.275 Theoretical option Value",
+        "field": "theoreticalOptionValue"
+      },
+      {
+        "details": "number ($double) example: -0.315 Theta Value",
+        "field": "theta"
+      },
+      {
+        "details": "number ($double) example: 12.22 Time Value",
+        "field": "timeValue"
+      },
+      {
+        "details": "integer ($int64) example: 20171188 Aggregated shares traded throughout the day, including pre/post market hours.",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64) example: 1621376731304 Last trade time in milliseconds since Epoch",
+        "field": "tradeTime"
+      },
+      {
+        "details": "number ($double) example: 3247.96 Underlying Price",
+        "field": "underlyingPrice"
+      },
+      {
+        "details": "number ($double) example: 1.4455 Vega Value",
+        "field": "vega"
+      },
+      {
+        "details": "number ($double) example: 0.0094 Option Risk/Volatility Measurement",
+        "field": "volatility"
+      }
+    ],
+    "name": "QuoteOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "Request one or more quote data in POST body",
+        "field": "description:"
+      },
+      {
+        "details": "[] example: List [ 808524680, 594918104 ] List of cusip, max of 500 of symbols+cusip+ssids string",
+        "field": "cusips"
+      },
+      {
+        "details": "string example: quote,reference comma separated list of nodes in each quote possible values are quote,fundamental,reference,extended,regular. Dont send this attribute for full response.",
+        "field": "fields"
+      },
+      {
+        "details": "[] example: List [ 1516105793, 34621523 ] List of Schwab securityid[SSID], max of 500 of symbols+cusip+ssids integer ($int64) maximum: 9999999999 minimum: 1",
+        "field": "ssids"
+      },
+      {
+        "details": "[] example: List [ \"MRAD\", \"EATOF\", \"EBIZ\", \"AAPL\", \"BAC\", \"AAAHX\", \"AAAIX\", \"$DJI\", \"$SPX\", \"MVEN\", \"SOBS\", \"TOITF\", \"CNSWF\", \"AMZN 230317C01360000\", \"DJX 231215C00290000\", \"/ESH23\", \"./ADUF23C0.55\", \"AUD/CAD\" ] List of symbols, max of 500 of symbols+cusip+ssids string",
+        "field": "symbols"
+      },
+      {
+        "details": "boolean example: true Get realtime quotes and skip entitlement check Enum: [ true, false ]",
+        "field": "realtime"
+      },
+      {
+        "details": "boolean example: true Include indicative symbol quotes for all ETF symbols in request. If ETF symbol ABC is in request and indicative=true API will return quotes for ABC and its corresponding indicative quote for $ABC.IV Enum: [ true, false ]",
+        "field": "indicative"
+      }
+    ],
+    "name": "QuoteRequest"
+  },
+  {
+    "fields": [
+      {
+        "details": "a (symbol, QuoteResponse) map. is an example key SCHW",
+        "field": "description:"
+      },
+      {
+        "details": "#/components/schemas/QuoteResponseObject QuoteResponseObject { oneOf -> #/components/schemas/EquityResponse EquityResponse { description: Quote info of Equity security assetMainType AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ] assetSubType EquityAssetSubType string nullable: true Asset Sub Type (only there if applicable) Enum: [ COE, PRF, ADR, GDR, CEF, ETF, ETN, UIT, WAR, RGT, ] ssid integer ($int64) example: 1234567890 SSID of instrument symbol string example: AAPL Symbol of instrument realtime boolean example: true is quote realtime quoteType QuoteType string nullable: true NBBO - realtime, NFL - Non-fee liable quote. Enum: [ NBBO, NFL, ] extended #/components/schemas/ExtendedMarket ExtendedMarket { description: Quote data for extended hours askPrice number ($double) example: 124.85 Extended market ask price askSize integer ($int32) example: 51771 Extended market ask size bidPrice number ($double) example: 124.85 Extended market bid price bidSize integer ($int32) example: 51771 Extended market bid size lastPrice number ($double) example: 124.85 Extended market last price lastSize integer ($int32) example: 51771 Regular market last size mark number ($double) example: 1.1246 mark price quoteTime integer ($int64) example: 1621368000400 Extended market quote time in milliseconds since Epoch totalVolume number ($int64) example: 12345 Total volume tradeTime integer ($int64) example: 1621368000400 Extended market trade time in milliseconds since Epoch } fundamental #/components/schemas/Fundamental Fundamental { description: Fundamentals of a security avg10DaysVolume number ($double) Average 10 day volume avg1YearVolume number ($double) Average 1 day volume declarationDate string ($date-time) example: 2021-04-28T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Declaration date in yyyy-mm-ddThh:mm:ssZ divAmount number ($double) example: 0.88 Dividend Amount divExDate string ($yyyy-MM-dd'T'HH:mm:ssZ) example: 2021-05-07T00:00:00Z Dividend date in yyyy-mm-ddThh:mm:ssZ divFreq DivFreq integer nullable: true Dividend frequency 1 \u2013 once a year or annually 2 \u2013 2x a year or semi-annualy 3 - 3x a year (ex. ARCO, EBRPF) 4 \u2013 4x a year or quarterly 6 - 6x per yr or every other month 11 \u2013 11x a year (ex. FBND, FCOR) 12 \u2013 12x a year or monthly Enum: [ 1, 2, 3, 4, 6, 11, 12, ] divPayAmount number ($double) example: 0.22 Dividend Pay Amount divPayDate string ($date-time) example: 2021-05-13T00:00:00Z pa\u2026",
+        "field": "< * >:"
+      }
+    ],
+    "name": "QuoteResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/EquityResponse EquityResponse { description: Quote info of Equity security assetMainType AssetMainType string Instrument's asset type Enum: [ BOND, EQUITY, FOREX, FUTURE, FUTURE_OPTION, INDEX, MUTUAL_FUND, OPTION ] assetSubType EquityAssetSubType string nullable: true Asset Sub Type (only there if applicable) Enum: [ COE, PRF, ADR, GDR, CEF, ETF, ETN, UIT, WAR, RGT, ] ssid integer ($int64) example: 1234567890 SSID of instrument symbol string example: AAPL Symbol of instrument realtime boolean example: true is quote realtime quoteType QuoteType string nullable: true NBBO - realtime, NFL - Non-fee liable quote. Enum: [ NBBO, NFL, ] extended #/components/schemas/ExtendedMarket ExtendedMarket { description: Quote data for extended hours askPrice number ($double) example: 124.85 Extended market ask price askSize integer ($int32) example: 51771 Extended market ask size bidPrice number ($double) example: 124.85 Extended market bid price bidSize integer ($int32) example: 51771 Extended market bid size lastPrice number ($double) example: 124.85 Extended market last price lastSize integer ($int32) example: 51771 Regular market last size mark number ($double) example: 1.1246 mark price quoteTime integer ($int64) example: 1621368000400 Extended market quote time in milliseconds since Epoch totalVolume number ($int64) example: 12345 Total volume tradeTime integer ($int64) example: 1621368000400 Extended market trade time in milliseconds since Epoch } fundamental #/components/schemas/Fundamental Fundamental { description: Fundamentals of a security avg10DaysVolume number ($double) Average 10 day volume avg1YearVolume number ($double) Average 1 day volume declarationDate string ($date-time) example: 2021-04-28T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Declaration date in yyyy-mm-ddThh:mm:ssZ divAmount number ($double) example: 0.88 Dividend Amount divExDate string ($yyyy-MM-dd'T'HH:mm:ssZ) example: 2021-05-07T00:00:00Z Dividend date in yyyy-mm-ddThh:mm:ssZ divFreq DivFreq integer nullable: true Dividend frequency 1 \u2013 once a year or annually 2 \u2013 2x a year or semi-annualy 3 - 3x a year (ex. ARCO, EBRPF) 4 \u2013 4x a year or quarterly 6 - 6x per yr or every other month 11 \u2013 11x a year (ex. FBND, FCOR) 12 \u2013 12x a year or monthly Enum: [ 1, 2, 3, 4, 6, 11, 12, ] divPayAmount number ($double) example: 0.22 Dividend Pay Amount divPayDate string ($date-time) example: 2021-05-13T00:00:00Z pattern: yyyy-MM-dd'T'HH:mm:ssZ Dividend pay date in yyyy-mm-ddThh:mm:ssZ\u2026",
+        "field": "oneOf ->"
+      }
+    ],
+    "name": "QuoteResponseObject"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Equity security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: A23456789 CUSIP of Instrument",
+        "field": "cusip"
+      },
+      {
+        "details": "string example: Apple Inc. - Common Stock Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string example: q Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      },
+      {
+        "details": "string maxLength: 50 FSI Desc",
+        "field": "fsiDesc"
+      },
+      {
+        "details": "integer ($int32) example: 100 Hard to borrow quantity.",
+        "field": "htbQuantity"
+      },
+      {
+        "details": "number ($double) example: 4.5 Hard to borrow rate.",
+        "field": "htbRate"
+      },
+      {
+        "details": "boolean example: false is Hard to borrow security.",
+        "field": "isHardToBorrow"
+      },
+      {
+        "details": "boolean example: false is shortable security.",
+        "field": "isShortable"
+      },
+      {
+        "details": "string maxLength: 10 OTC Market Tier",
+        "field": "otcMarketTier"
+      }
+    ],
+    "name": "ReferenceEquity"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Forex security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: Euro/USDollar Spot Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string example: q Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      },
+      {
+        "details": "boolean example: true is FOREX tradable",
+        "field": "isTradable"
+      },
+      {
+        "details": "string Market marker",
+        "field": "marketMaker"
+      },
+      {
+        "details": "string example: null Product name",
+        "field": "product"
+      },
+      {
+        "details": "string Trading hours",
+        "field": "tradingHours"
+      }
+    ],
+    "name": "ReferenceForex"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Future security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: E-mini S&P 500 Index Futures,Jun-2021,ETH Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string example: q Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      },
+      {
+        "details": "string example: /ESM21 Active symbol",
+        "field": "futureActiveSymbol"
+      },
+      {
+        "details": "number ($int64) example: 1623988800000 Future expiration date in milliseconds since epoch",
+        "field": "futureExpirationDate"
+      },
+      {
+        "details": "boolean example: true Future is active",
+        "field": "futureIsActive"
+      },
+      {
+        "details": "number ($double) example: 50 Future multiplier",
+        "field": "futureMultiplier"
+      },
+      {
+        "details": "string example: D,D Price format",
+        "field": "futurePriceFormat"
+      },
+      {
+        "details": "number ($double) example: 4123 Future Settlement Price",
+        "field": "futureSettlementPrice"
+      },
+      {
+        "details": "string example: GLBX(de=1640;0=-1700151515301600;1=r-17001515r15301600d-15551640;7=d-16401555) Trading Hours",
+        "field": "futureTradingHours"
+      },
+      {
+        "details": "string example: /ES Futures product symbol",
+        "field": "product"
+      }
+    ],
+    "name": "ReferenceFuture"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Future Option security",
+        "field": "description:"
+      },
+      {
+        "details": "ContractType string Indicates call or put Enum: [ P, C ]",
+        "field": "contractType"
+      },
+      {
+        "details": "string example: AMZN Aug 20 2021 2300 Put Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string example: q Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      },
+      {
+        "details": "number ($double) example: 100 Option multiplier",
+        "field": "multiplier"
+      },
+      {
+        "details": "integer ($int64) date of expiration in long",
+        "field": "expirationDate"
+      },
+      {
+        "details": "string Style of expiration",
+        "field": "expirationStyle"
+      },
+      {
+        "details": "number ($double) example: 2300 Strike Price",
+        "field": "strikePrice"
+      },
+      {
+        "details": "string example: AMZN Aug 20 2021 2300 Put A company, index or fund name",
+        "field": "underlying"
+      }
+    ],
+    "name": "ReferenceFutureOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Index security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: DOW JONES 30 INDUSTRIALS Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string example: q Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      }
+    ],
+    "name": "ReferenceIndex"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of MutualFund security",
+        "field": "description:"
+      },
+      {
+        "details": "string example: A23456789 CUSIP of Instrument",
+        "field": "cusip"
+      },
+      {
+        "details": "string example: Apple Inc. - Common Stock Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string default: m Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string default: MUTUAL_FUND Exchange Name",
+        "field": "exchangeName"
+      }
+    ],
+    "name": "ReferenceMutualFund"
+  },
+  {
+    "fields": [
+      {
+        "details": "Reference data of Option security",
+        "field": "description:"
+      },
+      {
+        "details": "ContractType string Indicates call or put Enum: [ P, C ]",
+        "field": "contractType"
+      },
+      {
+        "details": "string example: 0AMZN.TK12300000 CUSIP of Instrument",
+        "field": "cusip"
+      },
+      {
+        "details": "integer ($int32) example: 94 Days to Expiration",
+        "field": "daysToExpiration"
+      },
+      {
+        "details": "string example: $6024.37 cash in lieu of shares, 212 shares of AZN Unit of trade",
+        "field": "deliverables"
+      },
+      {
+        "details": "string example: AMZN Aug 20 2021 2300 Put Description of Instrument",
+        "field": "description"
+      },
+      {
+        "details": "string default: o Exchange Code",
+        "field": "exchange"
+      },
+      {
+        "details": "string Exchange Name",
+        "field": "exchangeName"
+      },
+      {
+        "details": "ExerciseType string option contract exercise type America or European Enum: [ A, E ]",
+        "field": "exerciseType"
+      },
+      {
+        "details": "integer ($int32) example: 20 maximum: 31 minimum: 1 Expiration Day",
+        "field": "expirationDay"
+      },
+      {
+        "details": "integer ($int32) example: 8 maximum: 12 minimum: 1 Expiration Month",
+        "field": "expirationMonth"
+      },
+      {
+        "details": "ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ]",
+        "field": "expirationType"
+      },
+      {
+        "details": "integer ($int32) example: 2021 Expiration Year",
+        "field": "expirationYear"
+      },
+      {
+        "details": "boolean example: true Is this contract part of the Penny Pilot program",
+        "field": "isPennyPilot"
+      },
+      {
+        "details": "integer ($int64) example: 1629504000000 milliseconds since epoch",
+        "field": "lastTradingDay"
+      },
+      {
+        "details": "number ($double) example: 100 Option multiplier",
+        "field": "multiplier"
+      },
+      {
+        "details": "SettlementType string option contract settlement type AM or PM Enum: [ A, P ]",
+        "field": "settlementType"
+      },
+      {
+        "details": "number ($double) example: 2300 Strike Price",
+        "field": "strikePrice"
+      },
+      {
+        "details": "string example: AMZN Aug 20 2021 2300 Put A company, index or fund name",
+        "field": "underlying"
+      }
+    ],
+    "name": "ReferenceOption"
+  },
+  {
+    "fields": [
+      {
+        "details": "Market info of security",
+        "field": "description:"
+      },
+      {
+        "details": "number ($double) example: 124.85 Regular market last price",
+        "field": "regularMarketLastPrice"
+      },
+      {
+        "details": "integer ($int32) example: 51771 Regular market last size",
+        "field": "regularMarketLastSize"
+      },
+      {
+        "details": "number ($double) example: -1.42 Regular market net change",
+        "field": "regularMarketNetChange"
+      },
+      {
+        "details": "number ($double) example: -1.1246 Regular market percent change",
+        "field": "regularMarketPercentChange"
+      },
+      {
+        "details": "integer ($int64) example: 1621368000400 Regular market trade time in milliseconds since Epoch",
+        "field": "regularMarketTradeTime"
+      }
+    ],
+    "name": "RegularMarket"
+  },
+  {
+    "fields": [],
+    "name": "AssetMainType"
+  },
+  {
+    "fields": [],
+    "name": "EquityAssetSubType"
+  },
+  {
+    "fields": [],
+    "name": "MutualFundAssetSubType"
+  },
+  {
+    "fields": [],
+    "name": "ContractType"
+  },
+  {
+    "fields": [],
+    "name": "SettlementType"
+  },
+  {
+    "fields": [],
+    "name": "ExpirationType"
+  },
+  {
+    "fields": [],
+    "name": "FundStrategy"
+  },
+  {
+    "fields": [],
+    "name": "ExerciseType"
+  },
+  {
+    "fields": [],
+    "name": "DivFreq"
+  },
+  {
+    "fields": [],
+    "name": "QuoteType"
+  },
+  {
+    "fields": [
+      {
+        "details": "[] #/components/schemas/Error Error { id string ($uuid) readOnly: true example: 9821320c-8500-4edf-bd46-a9299c13d2e0 Unique error id. status string readOnly: true example: 400 The HTTP status code . Enum: [ 400, 401, 404, 500 ] title string readOnly: true example: Missing header Short error description. detail string readOnly: true example: Search combination should not exceed 500. Detailed error description. source #/components/schemas/ErrorSource ErrorSource { description: Who is responsible for triggering these errors. pointer [] readOnly: true example: List [ \"/data/attributes/symbols\", \"/data/attributes/cusips\", \"/data/attributes/ssids\" ] list of attributes which lead to this error message. string parameter string readOnly: true example: fields parameter name which lead to this error message. header string readOnly: true example: Schwab-Client-CorrelId header name which lead to this error message. } }",
+        "field": "errors"
+      }
+    ],
+    "name": "ErrorResponse"
+  },
+  {
+    "fields": [
+      {
+        "details": "string ($uuid) readOnly: true example: 9821320c-8500-4edf-bd46-a9299c13d2e0 Unique error id.",
+        "field": "id"
+      },
+      {
+        "details": "string readOnly: true example: 400 The HTTP status code . Enum: [ 400, 401, 404, 500 ]",
+        "field": "status"
+      },
+      {
+        "details": "string readOnly: true example: Missing header Short error description.",
+        "field": "title"
+      },
+      {
+        "details": "string readOnly: true example: Search combination should not exceed 500. Detailed error description.",
+        "field": "detail"
+      },
+      {
+        "details": "#/components/schemas/ErrorSource ErrorSource { description: Who is responsible for triggering these errors. pointer [] readOnly: true example: List [ \"/data/attributes/symbols\", \"/data/attributes/cusips\", \"/data/attributes/ssids\" ] list of attributes which lead to this error message. string parameter string readOnly: true example: fields parameter name which lead to this error message. header string readOnly: true example: Schwab-Client-CorrelId header name which lead to this error message. }",
+        "field": "source"
+      }
+    ],
+    "name": "Error"
+  },
+  {
+    "fields": [
+      {
+        "details": "Who is responsible for triggering these errors.",
+        "field": "description:"
+      },
+      {
+        "details": "[] readOnly: true example: List [ \"/data/attributes/symbols\", \"/data/attributes/cusips\", \"/data/attributes/ssids\" ] list of attributes which lead to this error message. string",
+        "field": "pointer"
+      },
+      {
+        "details": "string readOnly: true example: fields parameter name which lead to this error message.",
+        "field": "parameter"
+      },
+      {
+        "details": "string readOnly: true example: Schwab-Client-CorrelId header name which lead to this error message.",
+        "field": "header"
+      }
+    ],
+    "name": "ErrorSource"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "status"
+      },
+      {
+        "details": "#/components/schemas/Underlying Underlying { ask number ($double) askSize integer ($int32) bid number ($double) bidSize integer ($int32) change number ($double) close number ($double) delayed boolean description string exchangeName string Enum: [ IND, ASE, NYS, NAS, NAP, PAC, OPR, BATS ] fiftyTwoWeekHigh number ($double) fiftyTwoWeekLow number ($double) highPrice number ($double) last number ($double) lowPrice number ($double) mark number ($double) markChange number ($double) markPercentChange number ($double) openPrice number ($double) percentChange number ($double) quoteTime integer ($int64) symbol string totalVolume integer ($int64) tradeTime integer ($int64) }",
+        "field": "underlying"
+      },
+      {
+        "details": "string Enum: [ SINGLE, ANALYTICAL, COVERED, VERTICAL, CALENDAR, STRANGLE, STRADDLE, BUTTERFLY, CONDOR, DIAGONAL, COLLAR, ROLL ]",
+        "field": "strategy"
+      },
+      {
+        "details": "number ($double)",
+        "field": "interval"
+      },
+      {
+        "details": "boolean",
+        "field": "isDelayed"
+      },
+      {
+        "details": "boolean",
+        "field": "isIndex"
+      },
+      {
+        "details": "number ($double)",
+        "field": "daysToExpiration"
+      },
+      {
+        "details": "number ($double)",
+        "field": "interestRate"
+      },
+      {
+        "details": "number ($double)",
+        "field": "underlyingPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "volatility"
+      },
+      {
+        "details": "{ < * >: #/components/schemas/OptionContractMap OptionContractMap { < * >: #/components/schemas/OptionContract OptionContract { putCall string Enum: [ PUT, CALL ] symbol string description string exchangeName string bidPrice number ($double) askPrice number ($double) lastPrice number ($double) markPrice number ($double) bidSize integer ($int32) askSize integer ($int32) lastSize integer ($int32) highPrice number ($double) lowPrice number ($double) openPrice number ($double) closePrice number ($double) totalVolume integer ($int32) tradeDate number ($integer) quoteTimeInLong integer ($int32) tradeTimeInLong integer ($int32) netChange number ($double) volatility number ($double) delta number ($double) gamma number ($double) theta number ($double) vega number ($double) rho number ($double) timeValue number ($double) openInterest number ($double) isInTheMoney boolean theoreticalOptionValue number ($double) theoreticalVolatility number ($double) isMini boolean isNonStandard boolean optionDeliverablesList [] #/components/schemas/OptionDeliverables OptionDeliverables { symbol string assetType string deliverableUnits string currencyType string } strikePrice number ($double) expirationDate string daysToExpiration number ($int) expirationType ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ] lastTradingDay number ($long) multiplier number ($double) settlementType SettlementType string option contract settlement type AM or PM Enum: [ A, P ] deliverableNote string isIndexOption boolean percentChange number ($double) markChange number ($double) markPercentChange number ($double) isPennyPilot boolean intrinsicValue number ($double) optionRoot string } } }",
+        "field": "callExpDateMap"
+      },
+      {
+        "details": "{ < * >: #/components/schemas/OptionContractMap OptionContractMap { < * >: #/components/schemas/OptionContract OptionContract { putCall string Enum: [ PUT, CALL ] symbol string description string exchangeName string bidPrice number ($double) askPrice number ($double) lastPrice number ($double) markPrice number ($double) bidSize integer ($int32) askSize integer ($int32) lastSize integer ($int32) highPrice number ($double) lowPrice number ($double) openPrice number ($double) closePrice number ($double) totalVolume integer ($int32) tradeDate number ($integer) quoteTimeInLong integer ($int32) tradeTimeInLong integer ($int32) netChange number ($double) volatility number ($double) delta number ($double) gamma number ($double) theta number ($double) vega number ($double) rho number ($double) timeValue number ($double) openInterest number ($double) isInTheMoney boolean theoreticalOptionValue number ($double) theoreticalVolatility number ($double) isMini boolean isNonStandard boolean optionDeliverablesList [] #/components/schemas/OptionDeliverables OptionDeliverables { symbol string assetType string deliverableUnits string currencyType string } strikePrice number ($double) expirationDate string daysToExpiration number ($int) expirationType ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ] lastTradingDay number ($long) multiplier number ($double) settlementType SettlementType string option contract settlement type AM or PM Enum: [ A, P ] deliverableNote string isIndexOption boolean percentChange number ($double) markChange number ($double) markPercentChange number ($double) isPennyPilot boolean intrinsicValue number ($double) optionRoot string } } }",
+        "field": "putExpDateMap"
+      }
+    ],
+    "name": "OptionChain"
+  },
+  {
+    "fields": [
+      {
+        "details": "#/components/schemas/OptionContract OptionContract { putCall string Enum: [ PUT, CALL ] symbol string description string exchangeName string bidPrice number ($double) askPrice number ($double) lastPrice number ($double) markPrice number ($double) bidSize integer ($int32) askSize integer ($int32) lastSize integer ($int32) highPrice number ($double) lowPrice number ($double) openPrice number ($double) closePrice number ($double) totalVolume integer ($int32) tradeDate number ($integer) quoteTimeInLong integer ($int32) tradeTimeInLong integer ($int32) netChange number ($double) volatility number ($double) delta number ($double) gamma number ($double) theta number ($double) vega number ($double) rho number ($double) timeValue number ($double) openInterest number ($double) isInTheMoney boolean theoreticalOptionValue number ($double) theoreticalVolatility number ($double) isMini boolean isNonStandard boolean optionDeliverablesList [] #/components/schemas/OptionDeliverables OptionDeliverables { symbol string assetType string deliverableUnits string currencyType string } strikePrice number ($double) expirationDate string daysToExpiration number ($int) expirationType ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ] lastTradingDay number ($long) multiplier number ($double) settlementType SettlementType string option contract settlement type AM or PM Enum: [ A, P ] deliverableNote string isIndexOption boolean percentChange number ($double) markChange number ($double) markPercentChange number ($double) isPennyPilot boolean intrinsicValue number ($double) optionRoot string }",
+        "field": "< * >:"
+      }
+    ],
+    "name": "OptionContractMap"
+  },
+  {
+    "fields": [
+      {
+        "details": "number ($double)",
+        "field": "ask"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "askSize"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bid"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "bidSize"
+      },
+      {
+        "details": "number ($double)",
+        "field": "change"
+      },
+      {
+        "details": "number ($double)",
+        "field": "close"
+      },
+      {
+        "details": "boolean",
+        "field": "delayed"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string Enum: [ IND, ASE, NYS, NAS, NAP, PAC, OPR, BATS ]",
+        "field": "exchangeName"
+      },
+      {
+        "details": "number ($double)",
+        "field": "fiftyTwoWeekHigh"
+      },
+      {
+        "details": "number ($double)",
+        "field": "fiftyTwoWeekLow"
+      },
+      {
+        "details": "number ($double)",
+        "field": "highPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "last"
+      },
+      {
+        "details": "number ($double)",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "mark"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markPercentChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "openPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "percentChange"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "quoteTime"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "totalVolume"
+      },
+      {
+        "details": "integer ($int64)",
+        "field": "tradeTime"
+      }
+    ],
+    "name": "Underlying"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "assetType"
+      },
+      {
+        "details": "string",
+        "field": "deliverableUnits"
+      },
+      {
+        "details": "string",
+        "field": "currencyType"
+      }
+    ],
+    "name": "OptionDeliverables"
+  },
+  {
+    "fields": [
+      {
+        "details": "string Enum: [ PUT, CALL ]",
+        "field": "putCall"
+      },
+      {
+        "details": "string",
+        "field": "symbol"
+      },
+      {
+        "details": "string",
+        "field": "description"
+      },
+      {
+        "details": "string",
+        "field": "exchangeName"
+      },
+      {
+        "details": "number ($double)",
+        "field": "bidPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "askPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "lastPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markPrice"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "bidSize"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "askSize"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "lastSize"
+      },
+      {
+        "details": "number ($double)",
+        "field": "highPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "lowPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "openPrice"
+      },
+      {
+        "details": "number ($double)",
+        "field": "closePrice"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "totalVolume"
+      },
+      {
+        "details": "number ($integer)",
+        "field": "tradeDate"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "quoteTimeInLong"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "tradeTimeInLong"
+      },
+      {
+        "details": "number ($double)",
+        "field": "netChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "volatility"
+      },
+      {
+        "details": "number ($double)",
+        "field": "delta"
+      },
+      {
+        "details": "number ($double)",
+        "field": "gamma"
+      },
+      {
+        "details": "number ($double)",
+        "field": "theta"
+      },
+      {
+        "details": "number ($double)",
+        "field": "vega"
+      },
+      {
+        "details": "number ($double)",
+        "field": "rho"
+      },
+      {
+        "details": "number ($double)",
+        "field": "timeValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "openInterest"
+      },
+      {
+        "details": "boolean",
+        "field": "isInTheMoney"
+      },
+      {
+        "details": "number ($double)",
+        "field": "theoreticalOptionValue"
+      },
+      {
+        "details": "number ($double)",
+        "field": "theoreticalVolatility"
+      },
+      {
+        "details": "boolean",
+        "field": "isMini"
+      },
+      {
+        "details": "boolean",
+        "field": "isNonStandard"
+      },
+      {
+        "details": "[] #/components/schemas/OptionDeliverables OptionDeliverables { symbol string assetType string deliverableUnits string currencyType string }",
+        "field": "optionDeliverablesList"
+      },
+      {
+        "details": "number ($double)",
+        "field": "strikePrice"
+      },
+      {
+        "details": "string",
+        "field": "expirationDate"
+      },
+      {
+        "details": "number ($int)",
+        "field": "daysToExpiration"
+      },
+      {
+        "details": "ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ]",
+        "field": "expirationType"
+      },
+      {
+        "details": "number ($long)",
+        "field": "lastTradingDay"
+      },
+      {
+        "details": "number ($double)",
+        "field": "multiplier"
+      },
+      {
+        "details": "SettlementType string option contract settlement type AM or PM Enum: [ A, P ]",
+        "field": "settlementType"
+      },
+      {
+        "details": "string",
+        "field": "deliverableNote"
+      },
+      {
+        "details": "boolean",
+        "field": "isIndexOption"
+      },
+      {
+        "details": "number ($double)",
+        "field": "percentChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markChange"
+      },
+      {
+        "details": "number ($double)",
+        "field": "markPercentChange"
+      },
+      {
+        "details": "boolean",
+        "field": "isPennyPilot"
+      },
+      {
+        "details": "number ($double)",
+        "field": "intrinsicValue"
+      },
+      {
+        "details": "string",
+        "field": "optionRoot"
+      }
+    ],
+    "name": "OptionContract"
+  },
+  {
+    "fields": [
+      {
+        "details": "string",
+        "field": "status"
+      },
+      {
+        "details": "[] #/components/schemas/Expiration Expiration { description: expiration type daysToExpiration integer ($int32) expiration string expirationType ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ] standard boolean settlementType SettlementType string option contract settlement type AM or PM Enum: [ A, P ] optionRoots string }",
+        "field": "expirationList"
+      }
+    ],
+    "name": "ExpirationChain"
+  },
+  {
+    "fields": [
+      {
+        "details": "expiration type",
+        "field": "description:"
+      },
+      {
+        "details": "integer ($int32)",
+        "field": "daysToExpiration"
+      },
+      {
+        "details": "string",
+        "field": "expiration"
+      },
+      {
+        "details": "ExpirationType string M for End Of Month Expiration Calendar Cycle. (To match the last business day of the month), Q for Quarterly expirations (last business day of the quarter month MAR/JUN/SEP/DEC), W for Weekly expiration (also called Friday Short Term Expirations) and S for Expires 3rd Friday of the month (also known as regular options). Enum: [ M, Q, S, W ]",
+        "field": "expirationType"
+      },
+      {
+        "details": "boolean",
+        "field": "standard"
+      },
+      {
+        "details": "SettlementType string option contract settlement type AM or PM Enum: [ A, P ]",
+        "field": "settlementType"
+      },
+      {
+        "details": "string",
+        "field": "optionRoots"
+      }
+    ],
+    "name": "Expiration"
+  }
+]
